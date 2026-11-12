@@ -17,7 +17,7 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^44.9.1"
+    "electron": "^45.2.3"
   },
   "dependencies": {
     "@fontsource/poppins": "^5.3.0"
