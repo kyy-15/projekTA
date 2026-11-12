@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Es Pisang Ijo Oma - detail menu</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline';">
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../fonts/all.min.css">
+    <link rel="stylesheet" href="../css/detailmenu.css">
+</head>
+
+<body class="beranda-body">
+    <div class="dashboard-wrapper">
+        <div id="sidebar-container"></div>
+
+        <main class="main-content">
+            <header class="content-header">
+                <div class="header-left">
+                    <span class="sub-brand">Es Pisang Ijo Oma</span>
+                </div>
+                <div class="header-right">
+                    <div class="user-profile">
+                        <div class="user-info">
+                            <span class="user-name">Heri Sugeng</span>
+                            <span class="user-role">owner</span>
+                        </div>
+                        <div class="user-avatar">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="container">
+
+                <!-- Navigasi Breadcrumb Internal -->
+                <div class="breadcrumb-nav">
+                    Menu &gt; Detail Menu
+                </div>
+
+                <div class="menu-detail-container">
+                    <!-- SISI KIRI: INPUT FOTO -->
+                    <div class="image-upload-section">
+                        <div class="image-placeholder"></div>
+                        <button class="btn-primary btn-full-width">Ubah Foto</button>
+                    </div>
+
+                    <div class="form-input">
+                        <h2 class="menu-title">Es Pisang Ijo Original</h2>
+
+                        <div class="form-group">
+                            <label>Nama Menu</label>
+                            <input type="text" class="form-control" value="Es Pisang Ijo Original">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Kategori</label>
+                            <select class="form-control">
+                                <option>Es pisang ijo</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Varian</label>
+                            <select class="form-control" id="variantSelect">
+                                <option value="dine-in">Dine-in</option>
+                                <option value="takeaway">Takeaway</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Deskripsi</label>
+                            <textarea
+                                class="form-control">makanan penutup khas Makassar, Sulawesi Selatan, berupa pisang matang yang dibalut adonan tepung berwarna hijau dari daun pandan. Hidangan ini disajikan bersama bubur sumsum lembut, siraman sirup merah, susu kental manis, dan es batu, menghasilkan perpaduan rasa manis dan gurih.</textarea>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- AREA MANAJEMEN BAWAH -->
+                <div class="management-section">
+                    <!-- TABEL BAHAN BAKU -->
+                    <div id="table-bahan">
+                        <div class="table-card">
+                            <div class="table-header">
+                                <div>Bahan Baku</div>
+                                <div>Jumlah</div>
+                                <div>Modal</div>
+                                <div></div>
+                            </div>
+                            <div id="ingredients-container"></div>
+                        </div>
+                        <button class="btn-primary mt-12 w-100" id="tambah-bahan">
+                            <i class="fa-solid fa-plus"></i> Tambah Bahan Baku
+                        </button>
+                    </div>
+
+                    <div class="card">
+                        <div class="price-management-card">
+                            <h3 class="panel-section-title">Manajemen Harga</h3>
+                            <div class="price-grid">
+                                <div class="form-group">
+                                    <label>HPP/Modal</label>
+                                    <input type="text" class="form-control" id="inputHPP" value="Rp 8.900" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label>Harga Jual</label>
+                                    <input type="text" class="form-control" id="inputHargaJual" value="10000"
+                                        oninput="calculateMargin()">
+                                </div>
+                            </div>
+                            <div class="margin-box">
+                                <label class="margin-label">Margin Laba</label>
+                                <div class="margin-value" id="marginLabel">18 %</div>
+                            </div>
+                        </div>
+
+                        <!-- TOMBOL AKSI UTAMA -->
+                        <div class="action-buttons-row">
+                            <button class="btn-danger" id="balik">Hapus Menu</button>
+                            <button class="btn-primary" id="navigate">Ubah Detail Menu</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </main>
+    </div>
+
+    <!-- POPUP / MODAL TAMBAH BAHAN BAKU -->
+    <div class="modal-overlay" id="addBahanModal">
+        <div class="modal-content">
+            <div class="modal-title">Bahan Baku / Resep</div>
+
+            <div class="form-group">
+                <div class="modal-label-row">
+                    <label>Pilih Bahan Baku</label>
+                    <span class="modal-stock-info">Stok : <strong>10 Kg</strong></span>
+                </div>
+                <select class="form-control">
+                    <option>Es Batu</option>
+                    <option>Pisang Ijo</option>
+                    <option>Mutiara</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Takaran Yang Digunakan</label>
+                <div class="inline-inputs">
+                    <input type="text" class="form-control flex-grow" value="0,01">
+                    <select class="form-control w-80">
+                        <option>Kg</option>
+                        <option>Pcs</option>
+                        <option>Gram</option>
+                    </select>
+                </div>
+            </div>
+
+            <button class="btn-primary w-100 mt-12 mb-20">
+                Tambahkan Bahan / Resep
+            </button>
+
+            <h4 class="modal-section-title">Daftar Bahan</h4>
+            <div class="table-card">
+                <div class="table-header modal-table-grid">
+                    <div>Bahan Baku</div>
+                    <div>Jumlah</div>
+                    <div></div>
+                </div>
+                <div class="table-row modal-table-grid">
+                    <div>Pisang Ijo</div>
+                    <div>1 buah</div>
+                    <button class="btn-delete-row">&times;</button>
+                </div>
+                <div class="table-row modal-table-grid">
+                    <div>Mutiara</div>
+                    <div>1,7 gram</div>
+                    <button class="btn-delete-row">&times;</button>
+                </div>
+                <div class="table-row modal-table-grid">
+                    <div>Cup</div>
+                    <div>1 pcs</div>
+                    <button class="btn-delete-row">&times;</button>
+                </div>
+                <div class="table-row modal-table-grid">
+                    <div>Sendok</div>
+                    <div>1 pcs</div>
+                    <button class="btn-delete-row">&times;</button>
+                </div>
+            </div>
+
+            <div class="modal-footer-info">
+                Total Modal Menu (HPP): <strong>Rp 1.500</strong>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+
+    </div>
+
+    <script src="../js/detail-menu.js"></script>
+    <script src="../js/sidebar.js"></script>
+
+</body>
+
+</html>

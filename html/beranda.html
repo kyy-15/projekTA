@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self';">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Es Pisang Ijo Oma - Beranda Owner</title>
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../fonts/all.min.css">
+    <link rel="stylesheet" href="../css/beranda.css">
+</head>
+
+<body class="beranda-body">
+
+    <div class="dashboard-wrapper">
+        <div id="sidebar-container"></div>
+
+        <!-- MAIN CONTENT AREA -->
+        <main class="main-content">
+            <header class="content-header">
+                <div class="header-left">
+                    <span class="sub-brand">Es Pisang Ijo Oma</span>
+                </div>
+                <div class="header-right">
+                    <div class="user-profile">
+                        <div class="user-info">
+                            <span class="user-name">Heri Sugeng</span>
+                            <span class="user-role">owner</span>
+                        </div>
+                        <div class="user-avatar">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="container">
+
+                <section class="welcome-section">
+                    <div class="welcome-text">
+                        <h1>Selamat Datang, Owner !</h1>
+                        <p>Pantau perkembangan bisnis anda</p>
+                    </div>
+                    <div class="welcome-date">
+                        <span>24 Oktober 2026</span>
+                    </div>
+                </section>
+
+                <!-- STATS CARDS ROW -->
+                <section class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-label">Total Omset</span>
+                        <h2 class="stat-value">Rp 12.583.000</h2>
+                        <span class="stat-indicator up"><i class="fa-solid fa-arrow-up"></i> 12.73%</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Laba Kotor</span>
+                        <h2 class="stat-value">Rp 2.250.000</h2>
+                        <span class="stat-indicator up"><i class="fa-solid fa-arrow-up"></i> 11.94%</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Total Transaksi</span>
+                        <h2 class="stat-value">105</h2>
+                        <span class="stat-indicator down"><i class="fa-solid fa-arrow-down"></i> 13.00%</span>
+                    </div>
+                </section>
+
+                <!-- DATA VISUALIZATION SECTION -->
+                <div class="data-row">
+                    <!-- PANEL GRAFIK PENJUALAN -->
+                    <div class="chart-container">
+                        <div class="panel-header">
+                            <h3>Grafik Penjualan</h3>
+                            <div class="custom-select">
+                                <select>
+                                    <option>Bulanan</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- Placeholder Canvas Grafik minimalis (Sisi Frontend) -->
+                        <div class="mock-chart-wrapper">
+                            <div class="chart-y-axis">
+                                <span>5k</span><span>4k</span><span>3k</span><span>2k</span><span>1k</span><span>0</span>
+                            </div>
+                            <div class="chart-visual-area">
+                                <svg viewBox="0 0 600 200" preserveAspectRatio="none" class="graphic-line-svg">
+                                    <!-- Pola garis path disesuaikan meliuk presisi dari bulan Jan-Des sesuai gambar figma -->
+                                    <path
+                                        d="M 10 190 L 55 50 L 105 75 L 155 125 L 210 115 L 265 90 L 320 150 L 375 140 L 430 105 L 485 95 L 540 110 L 590 120"
+                                        fill="none" stroke="#3182ce" stroke-width="3" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                </svg>
+                            </div>
+                            <div class="chart-x-axis">
+                                <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Oct</span><span>Sept</span><span>Nov</span><span>Dec</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PANEL RIWAYAT TRANSAKSI -->
+                    <div class="transaction-container">
+                        <div class="panel-header">
+                            <h3>Riwayat Transaksi</h3>
+                        </div>
+                        <div class="transaction-list">
+                            <div class="trx-item">
+                                <div class="trx-info"><strong>#EP-0002</strong><span>Kasir A</span></div>
+                                <div class="trx-amount"><strong>Rp 50.000</strong></div>
+                            </div>
+                            <div class="trx-item">
+                                <div class="trx-info"><strong>#EP-0002</strong><span>Kasir A</span></div>
+                                <div class="trx-amount"><strong>Rp 50.000</strong></div>
+                            </div>
+                            <div class="trx-item">
+                                <div class="trx-info"><strong>#EP-0002</strong><span>Kasir B</span></div>
+                                <div class="trx-amount"><strong>Rp 50.000</strong></div>
+                            </div>
+                            <div class="trx-item">
+                                <div class="trx-info"><strong>#EP-0002</strong><span>Kasir A</span></div>
+                                <div class="trx-amount"><strong>Rp 50.000</strong></div>
+                            </div>
+                        </div>
+                        <a href="#" class="view-more-link">lihat selengkapnya</a>
+                    </div>
+                </div>
+
+                <div class="data-row text-panels">
+
+                    <h3>Notifikasi</h3>
+                    <h3>Menu Terlaris</h3>
+
+                    <div class="notification-panel">
+                        <div class="alert-header">
+                            <span class="status-badge">Status kritis</span>
+                            <i class="fa-solid fa-bell alert-icon"></i>
+                        </div>
+                        <div class="alert-box-critical">
+                            <div class="alert-body">
+                                <p>Stock ice cream habis</p>
+                                <span class="stock-count">stock : 1</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="best-seller-panel">
+                        <div class="product-image-placeholder"></div>
+
+                        <div class="column-card">
+                            <div class="best-seller-card">
+                                <div class="panel-header">
+                                    <h4>Es Pisang ijo</h4>
+                                    <div class="custom-select">
+                                        <select>
+                                            <option>Bulan ini</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bottom-detail">
+                                <div class="product-details">
+                                    <span class="category-tag">ice cream</span>
+                                    <strong class="product-price">Rp 15.000</strong>
+                                </div>
+                                <div class="product-sales-count">
+                                    <span class="sales-text">pesanan : <span class="green-highlight">256
+                                            pcs</span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    </main>
+    </div>
+
+    <script src="../js/renderer.js"></script>
+    <script src="../js/sidebar.js"></script>
+</body>
+
+</html>

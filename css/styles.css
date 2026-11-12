@@ -1,0 +1,177 @@
+/* Reset dasar untuk margin dan padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #4da1a9 0%, #1ddb5c 100%);
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    width: 90%;
+    max-width: 1000px;
+    height: 80vh;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* Bagian Branding (Kiri) */
+.brand-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    flex: 1;
+}
+
+/* .logo-wrapper {
+    width: 220px;
+    height: 220px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+} */
+
+.logo-img {
+    width: 250px;
+    height: 340px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.brand-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
+    letter-spacing: 1px;
+}
+
+/* Bagian Card Login (Kanan) */
+.login-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.login-card {
+    background: #ffffff;
+    padding: 40px 35px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 380px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.login-card h2 {
+    color: #1ddb5c;
+    font-size: 1.75rem;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+/* Grouping Form Input */
+.input-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Styling Ikon Font Awesome di Dalam Input */
+.input-wrapper .icon {
+    position: absolute;
+    left: 14px;
+    color: #a0a0a0;
+    font-size: 0.95rem;
+    pointer-events: none;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 12px 40px 12px 38px;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Mengubah warna border & ikon saat input aktif/fokus */
+.input-wrapper input:focus {
+    border-color: #1ddb5c;
+    box-shadow: 0 0 0 3px rgba(29, 219, 92, 0.15);
+}
+
+.input-wrapper input:focus ~ .icon {
+    color: #1ddb5c;
+}
+
+/* Tombol Intip/Mata Password */
+.toggle-icon {
+    position: absolute;
+    right: 14px;
+    cursor: pointer;
+    color: #a0a0a0;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.toggle-icon:hover {
+    color: #1ddb5c;
+}
+
+/* Tombol Submit */
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    background-color: #1ddb5c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background-color: #17b84c;
+}
+
+.btn-submit:active {
+    transform: scale(0.98);
+}

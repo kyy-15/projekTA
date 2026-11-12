@@ -1,0 +1,364 @@
+.beranda-body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg);
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+.main-content {
+    margin-left: 260px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.container {
+    padding: 0 32px 24px 32px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--white);
+    padding: 12px 16px;
+    border-bottom: 1.8px solid var(--stroke);
+}
+
+.sub-brand {
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.user-name {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--teks);
+}
+
+.user-role {
+    font-size: 12px;
+    color: var(--input);
+}
+
+.user-avatar {
+    width: 36px;
+    height: 36px;
+    background-color: var(--abu);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--input);
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.w-80 {
+    width: 80px;
+}
+
+.flex-grow {
+    flex-grow: 1;
+}
+
+.mt-12 {
+    margin-top: 12px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.breadcrumb-nav {
+    font-size: 14px;
+    color: #718096;
+    margin-bottom: -10px;
+}
+
+/* --- DETAIL MENU BLOCK --- */
+.menu-detail-container {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    background-color: #fff;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 4px 4px 4px rgba(33, 150, 243, 0.1);
+    border: 1.5px solid var(--stroke);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 4px 4px 4px rgba(33, 150, 243, 0.1);
+    border: 1.5px solid var(--stroke);
+}
+
+.image-upload-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    width: fit-content;
+}
+
+.image-placeholder {
+    width: 320px;
+    height: 320px;
+    background-color: #e2e8f0;
+    border-radius: 8px;
+}
+
+.btn-full-width {
+    width: 100%;
+    max-width: 320px;
+}
+
+.menu-title {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* --- FORM CONTROLS --- */
+.form-group {
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.form-control {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #4a5568;
+    background-color: #fff;
+}
+
+textarea.form-control {
+    resize: vertical;
+    height: 100px;
+}
+
+.inline-inputs {
+    display: flex;
+    gap: 8px;
+}
+
+/* --- BUTTONS --- */
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+.btn-danger {
+    background-color: var(--red);
+    color: var(--RED);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+/* --- MANAGEMENT AREA & TABLES --- */
+.management-section {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 24px;
+}
+
+.table-card {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 40px;
+    background-color: var(--primary);
+    color: white;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.table-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 40px;
+    padding: 10px;
+    border-bottom: 1px solid var(--stroke);
+    align-items: center;
+    font-size: 14px;
+    background-color: white;
+}
+
+.table-row:nth-child(even) {
+    background-color: var(--bg-light);
+}
+
+.btn-delete-row {
+    background: none;
+    border: none;
+    color: #a0aec0;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-delete-row:hover {
+    color: var(--danger);
+}
+
+/* --- PRICE MANAGEMENT CARD --- */
+.price-management-card {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.panel-section-title {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 16px;
+}
+
+.price-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.margin-box {
+    margin-top: 16px;
+}
+
+.margin-label {
+    font-size: 14px;
+    color: #718096;
+}
+
+.margin-value {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.action-buttons-row {
+    grid-column: span 2;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 20px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 16px;
+}
+
+/* --- POPUP / MODAL INTERFACE --- */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 24px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 480px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.modal-title {
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.modal-label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-stock-info {
+    color: #a0aec0;
+    font-size: 14px;
+}
+
+.modal-section-title {
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.modal-table-grid {
+    grid-template-columns: 2fr 1.5fr 40px !important;
+}
+
+.modal-footer-info {
+    margin-top: 16px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.form-input {
+    width: 100%;
+}

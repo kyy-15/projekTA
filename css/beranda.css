@@ -1,0 +1,389 @@
+.beranda-body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg);
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+h3{
+    margin: 0;
+}
+
+.dashboard-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-left: 260px;
+}
+
+.container {
+    padding: 0 32px 24px 32px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--white);
+    padding: 12px 16px;
+    border-bottom: 1.8px solid var(--stroke);
+}
+
+.sub-brand {
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.user-name {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--teks);
+}
+
+.user-role {
+    font-size: 12px;
+    color: var(--input);
+}
+
+.user-avatar {
+    width: 36px;
+    height: 36px;
+    background-color: var(--abu);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--input);
+}
+
+.welcome-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.welcome-text h1 {
+    font-size: 24px;
+    margin: 0;
+    color: #2d3748;
+}
+
+.welcome-text p {
+    font-size: 14px;
+    color: #718096;
+    margin: 4px 0 0 0;
+}
+
+.welcome-date {
+    color: #a0aec0;
+    font-size: 14px;
+}
+
+/* --- CARD STATISTIK --- */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.stat-card {
+    background-color: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 4px 4px 4px rgba(33, 150, 243, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border: 1.5px solid var(--stroke);
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #718096;
+}
+
+.stat-value {
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0;
+    color: #2d3748;
+}
+
+.stat-indicator {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.stat-indicator.up {
+    color: #00c853;
+}
+
+.stat-indicator.down {
+    color: #ff5252;
+}
+
+/* --- LAYOUT GRID UTAMA --- */
+.data-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+}
+
+.chart-container,
+.transaction-container,
+.notification-panel {
+    background-color: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 4px 4px 4px rgba(33, 150, 243, 0.1);
+    border: 1.5px solid var(--stroke);
+}
+
+.best-seller-panel{
+    gap: 16px;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    background-color: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 4px 4px 4px rgba(33, 150, 243, 0.1);
+    border: 1.5px solid var(--stroke);
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    height: max-content;
+}
+
+.panel-header h3, h4 {
+    margin: 0;
+    font-size: 16px;
+    color: #2d3748;
+}
+
+.custom-select select {
+    padding: 6px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    background-color: #fff;
+    color: #4a5568;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* --- GRAFIK PENJUALAN --- */
+.mock-chart-wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-left: 30px;
+}
+
+.chart-y-axis {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #a0aec0;
+    font-size: 12px;
+}
+
+.chart-visual-area {
+    height: 150px;
+    border-left: 1px dashed #e2e8f0;
+    border-bottom: 1px dashed #e2e8f0;
+    margin-bottom: 10px;
+    z-index: 999;
+}
+
+.graphic-line-svg {
+    width: 100%;
+    height: 100%;
+}
+
+.chart-x-axis {
+    display: flex;
+    justify-content: space-between;
+    color: #a0aec0;
+    font-size: 12px;
+}
+
+/* --- RIWAYAT TRANSAKSI --- */
+.transaction-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.trx-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f7fafc;
+}
+
+.trx-info {
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+}
+
+.trx-info strong {
+    color: #2d3748;
+}
+
+.trx-info span {
+    color: #a0aec0;
+}
+
+.trx-amount {
+    color: #2d3748;
+    font-size: 14px;
+}
+
+.view-more-link {
+    display: block;
+    text-align: center;
+    color: #3182ce;
+    font-size: 13px;
+    text-decoration: none;
+    margin-top: 16px;
+    font-weight: 500;
+}
+
+/* --- NOTIFIKASI & TERLARIS --- */
+.text-panels {
+    grid-template-columns: 1fr 1fr;
+}
+
+.notification-panel h3 {
+    margin-bottom: 5px;
+}
+
+.alert-box-critical {
+    background-color: var(--red);
+    border-left: 4px solid var(--RED);
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.alert-header {
+    display: flex;
+    justify-content: space-between;
+    color: var(--RED);
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.alert-body {
+    margin-top: 8px;
+}
+
+.alert-body p {
+    margin: 0;
+    font-weight: 600;
+    color: var(--RED);
+    font-size: 15px;
+}
+
+.stock-count {
+    font-size: 12px;
+    color: #ff5252;
+    font-weight: 500;
+}
+
+.best-seller-card {
+    align-items: center;
+    gap: 16px;
+    border-radius: 8px;
+    height: 50px;
+}
+
+.product-image-placeholder {
+    width: 100px;
+    height: 100px;
+    background-color: #00c853;
+    border-radius: 8px;
+    z-index: 99;
+}
+
+.product-details {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.product-details h4 {
+    margin: 0;
+    font-size: 15px;
+    color: #2d3748;
+}
+
+.category-tag {
+    font-size: 11px;
+    color: #3182ce;
+    background-color: #ebf8ff;
+    padding: 2px 6px;
+    border-radius: 4px;
+    width: max-content;
+    margin: 4px 0;
+}
+
+.product-price {
+    color: #2d3748;
+    font-size: 14px;
+}
+
+.product-sales-count {
+    font-size: 13px;
+    color: #4a5568;
+}
+
+.green-highlight {
+    color: #00c853;
+    font-weight: 600;
+}
+
+.bottom-detail{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.column-card{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}

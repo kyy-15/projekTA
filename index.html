@@ -1,19 +1,57 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
-    <link href="./styles.css" rel="stylesheet">
-    <title>Hello World!</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>.
+<html lang="id">
 
-    <!-- You can also require other files to run in this process -->
-    <script src="./renderer.js"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self';">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Es Pisang Ijo Oma - Login</title>
+    <link rel="stylesheet" href="fonts/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="brand-section">
+            <div class="logo-wrapper">
+                <img src="logo-oma.png" alt="Es Pisang Ijo Oma Logo" class="logo-img">
+            </div>
+            <h1 class="brand-title">ES PISANG IJO OMA</h1>
+        </div>
+
+        <div class="login-section">
+            <div class="login-card">
+                <h2>Sign in</h2>
+                <form id="loginForm">
+                    <!-- Input Username -->
+                    <div class="input-group">
+                        <label for="username">Username</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-user icon"></i>
+                            <input type="text" id="username" placeholder="Username..." required>
+                        </div>
+                    </div>
+
+                    <!-- Input Password -->
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-lock icon"></i>
+                            <input type="password" id="password" placeholder="Password..." required>
+                            <i class="fa-solid fa-eye toggle-icon" id="togglePassword"></i>
+                        </div>
+                    </div>
+
+                    <!-- Tombol Sign In -->
+                    <button type="submit" class="btn-submit">Sign In</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/renderer.js"></script>
+</body>
+
 </html>
