@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pisang Ijo Omah - Tambah Menu</title>
+    <!-- <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;"> -->
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../fonts/all.min.css">
+    <link rel="stylesheet" href="../css/detailmenu.css">
+</head>
+
+<body class="beranda-body">
+    <div class="dashboard-wrapper">
+        <div id="sidebar-container"></div>
+
+        <main class="main-content">
+            <header class="content-header">
+                <div class="header-left">
+                    <span class="sub-brand">Es Pisang Ijo Oma</span>
+                </div>
+                <div class="header-right">
+                    <div class="user-profile">
+                        <div class="user-info">
+                            <span class="user-name">Heri Sugeng</span>
+                            <span class="user-role">owner</span>
+                        </div>
+                        <div class="user-avatar">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="container">
+                <div class="breadcrumb-nav">
+                    <a href=menu.html>Menu &gt; Detail Menu</a>
+                </div>
+                <!-- CARD ATAS: INFORMASI UTAMA & GAMBAR -->
+                <section class="menu-detail-container">
+                    <div class="image-upload-section">
+                        <div class="image-placeholder" id="detail-img-preview">
+                            <!-- Placeholder default abu-abu -->
+                        </div>
+                        <input type="file" id="input-foto" accept="image/*" style="display: none;">
+                        <button type="button" class="btn-primary btn-full-width" id="btn-trigger-upload">Tambah
+                            Foto</button>
+                    </div>
+
+                    <div class="form-input">
+                        <h1 class="menu-title-live" id="txt-live-title">Untitled</h1>
+
+                        <div class="form-group">
+                            <label>Nama Menu</label>
+                            <input type="text" class="form-control" id="input-nama-menu"
+                                placeholder="Masukkan Nama Menu">
+                        </div>
+
+                        <!-- FITUR VARIAN: DINE-IN / TAKEAWAY -->
+                        <div class="form-group">
+                            <label>Varian / Tipe Penjualan</label>
+                            <select class="form-control" id="select-varian">
+                                <option value="dine-in">Makan di Tempat (Dine-in)</option>
+                                <option value="takeaway">Dibawa Pulang (Takeaway)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Kategori</label>
+                            <select class="form-control" id="input-kategori">
+                                <option value="">-- Pilih Kategori --</option>
+                                <!-- Data kategori dari JSON akan masuk di sini secara dinamis -->
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Deskripsi</label>
+                            <textarea class="form-control" id="input-deskripsi"
+                                placeholder="makanan penutup khas Makassar, Sulawesi Selatan, berupa pisang matang yang dibalut adonan tepung berwarna hijau dari daun pandan. Hidangan ini disajikan bersama bubur sumsum lembut, siraman sirup merah, susu kental manis, dan es batu, menghasilkan perpaduan rasa manis dan gurih."></textarea>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SUB SECTION BAWAH: GRID BAHAN BAKU & MANAJEMEN HARGA -->
+                <div class="management-section">
+
+                    <!-- BLOK KIRI: MANAJEMEN BAHAN BAKU RESEP -->
+                    <div class="ingredients-table-container">
+                        <!-- BOX GREEN BESAR DEFAULT -->
+                        <div class="btn-tambah-baku-secondary green-style-btn" id="block-placeholder-bahan">
+                            <span>📋 Tambah Bahan Baku</span>
+                        </div>
+
+                        <!-- CONTAINER YANG AKAN MUNCUL JIKA BAHAN SUDAH TERISI -->
+                        <div class="ingredients-table-container hidden" id="block-tabel-bahan">
+                            <table class="table-resep green-header-table">
+                                <thead>
+                                    <tr>
+                                        <th>Bahan Baku</th>
+                                        <th>Jumlah</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbody-resep-terpilih">
+                                    <!-- Generated via JS -->
+                                </tbody>
+                            </table>
+                            <button type="button" class="btn-tambah-baku-secondary green-style-btn"
+                                id="btn-tambah-baku-lagi">+ Tambah
+                                Bahan Baku</button>
+                        </div>
+                    </div>
+
+                    <!-- BLOK KANAN: MANAJEMEN HARGA -->
+                    <div class="price-management-card">
+                        <h3 class="panel-section-title">Manajemen Harga</h3>
+
+                        <div class="price-row">
+                            <div class="form-group">
+                                <label>HPP/Modal</label>
+                                <div class="input-prefix-group">
+                                    <span class="prefix">Rp</span>
+                                    <input class="form-control" type="text" id="input-hpp" readonly value="0">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Harga Jual</label>
+                                <div class="input-prefix-group">
+                                    <span class="prefix">Rp</span>
+                                    <input class="form-control" type="number" id="input-harga-jual" value="10000">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="margin-result-section">
+                            <label>Margin Laba</label>
+                            <div class="percentage-display" id="txt-margin-percentage">0 %</div>
+                        </div>
+
+                        <div class="action-buttons-row">
+                            <button type="button" class="btn-danger">Cancel</button>
+                            <button type="button" class="btn-primary" id="btn-simpan-menu">Tambah Menu</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- POP-UP MODAL: SELEKSI BAHAN -->
+    <div class="modal-overlay" id="modal-bahan">
+        <div class="modal-box">
+            <h3>Bahan Baku / Resep Varian (<span id="txt-modal-varian-title">Dine-in</span>)</h3>
+
+            <div class="form-group">
+                <label>Pilih Bahan Baku</label>
+                <div class="select-row">
+                    <select class="form-control" id="select-bahan-baku"></select>
+                    <span class="stok-info" id="txt-stok-tersedia">Stok: -</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Takaran Yang Digunakan</label>
+                <div class="input-unit-row">
+                    <input class="form-control" type="number" step="1" id="input-takaran" value="1">
+                    <span id="txt-satuan-bahan">-</span>
+                </div>
+            </div>
+
+            <button class="btn-tambah-baku-secondary green-style-btn" id="btn-tambahkan-ke-list">Tambahkan Ke Resep
+                Varian</button>
+
+            <div class="daftar-bahan-container">
+                <h4>Preview Resep Saat Ini:</h4>
+                <ul class="list-resep-preview" id="list-resep-preview"></ul>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn-modal-batal" id="btn-tutup-modal">Selesai & Tutup</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/tambah.js"></script>
+    <script src="../js/sidebar.js"></script>
+
+</body>
+
+</html>

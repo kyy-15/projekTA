@@ -1,0 +1,8 @@
+[
+  { "id": "1", "nama": "Pisang Ijo", "satuan": "buah", "stok": 50, "harga_satuan": 100 },
+  { "id": "2", "nama": "Mutiara", "satuan": "gram", "stok": 1000, "harga_satuan": 117.6 },
+  { "id": "3", "nama": "Cup", "satuan": "pcs", "stok": 200, "harga_satuan": 500 },
+  { "id": "4", "nama": "Sendok", "satuan": "pcs", "stok": 500, "harga_satuan": 200 },
+  { "id": "5", "nama": "Es Batu", "satuan": "Kg", "stok": 10, "harga_satuan": 3000 },
+  { "id": "6", "nama": "Hijau hijau", "satuan": "gram", "stok": 500, "harga_satuan": 1400 }
+]

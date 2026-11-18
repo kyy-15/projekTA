@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu Produk - Pisang Ijo Omah</title>
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;">
     <link rel="stylesheet" href="../css/sidebar.css">
     <link rel="stylesheet" href="../css/menu-style.css">
     <link rel="stylesheet" href="../fonts/all.min.css">
@@ -45,111 +47,23 @@
                             <i class="fa-solid fa-magnifying-glass search-icon-inside"></i>
                             <input type="text" id="searchProduct" placeholder="Search...">
                         </div>
-                        <div class="menu-category-group">
-                            <button class="menu-btn-filter active" data-category="all">Semua</button>
-                            <button class="menu-btn-filter" data-category="original">Original</button>
-                            <button class="menu-btn-filter" data-category="creamy">Creamy</button>
-                            <button class="menu-btn-filter" data-category="minuman">Minuman</button>
-                            <button class="menu-btn-filter" data-category="makanan">Makanan</button>
+                        <div class="menu-category-group" id="category">
                         </div>
                     </div>
 
                     <div class="menu-btn-actions">
-                        <button class="menu-btn-add"><i class="fa-solid fa-plus"></i> Tambah Kategori</button>
-                        <button class="menu-btn-add"><i class="fa-solid fa-plus"></i> Tambah Menu</button>
+                        <button class="menu-btn-add" id="categoryBtn"><i class="fa-solid fa-plus"></i> Tambah Kategori</button>
+                        <a href="tambah-menu.html"><button class="menu-btn-add"><i class="fa-solid fa-plus"></i> Tambah Menu </button></a>
                     </div>
                 </div>
 
-                <!-- Grid Item Produk -->
-                <div class="menu-products-grid" id="productsGrid">
-                    <!-- Duplikasi item sesuai visual mockup di gambar Anda -->
-                    <div class="menu-card-item" data-category="original" onclick="window.location.href='detailmenu.html';">
-                        <div class="menu-card-thumb"></div>
-                        <div class="menu-card-body">
-                            <h3 class="menu-card-name">Es Pisang Ijo Original</h3>
-                            <p class="menu-card-price">Rp 10.000</p>
-                        </div>
-                    </div>
-                    <div class="menu-card-item" data-category="original">
-                        <div class="menu-card-thumb"></div>
-                        <div class="menu-card-body">
-                            <h3 class="menu-card-name">Es Pisang Ijo Original</h3>
-                            <p class="menu-card-price">Rp 10.000</p>
-                        </div>
-                    </div>
-                    <div class="menu-card-item" data-category="original">
-                        <div class="menu-card-thumb"></div>
-                        <div class="menu-card-body">
-                            <h3 class="menu-card-name">Es Pisang Ijo Original</h3>
-                            <p class="menu-card-price">Rp 10.000</p>
-                        </div>
-                    </div>
-                    <div class="menu-card-item" data-category="original">
-                        <div class="menu-card-thumb"></div>
-                        <div class="menu-card-body">
-                            <h3 class="menu-card-name">Es Pisang Ijo Original</h3>
-                            <p class="menu-card-price">Rp 10.000</p>
-                        </div>
-                    </div>
-                    <div class="menu-card-item" data-category="creamy">
-                        <div class="menu-card-thumb"></div>
-                        <div class="menu-card-body">
-                            <h3 class="menu-card-name">Es Pisang Ijo Creamy</h3>
-                            <p class="menu-card-price">Rp 12.000</p>
-                        </div>
-                    </div>
-                    <div class="menu-card-item" data-category="original">
-                        <div class="menu-card-thumb"></div>
-                        <div class="menu-card-body">
-                            <h3 class="menu-card-name">Es Pisang Ijo Original</h3>
-                            <p class="menu-card-price">Rp 10.000</p>
-                        </div>
-                    </div>
-                    <div class="menu-card-item" data-category="original">
-                        <div class="menu-card-thumb"></div>
-                        <div class="menu-card-body">
-                            <h3 class="menu-card-name">Es Pisang Ijo Original</h3>
-                            <p class="menu-card-price">Rp 10.000</p>
-                        </div>
-                    </div>
-                    <div class="menu-card-item" data-category="original">
-                        <div class="menu-card-thumb"></div>
-                        <div class="menu-card-body">
-                            <h3 class="menu-card-name">Es Pisang Ijo Original</h3>
-                            <p class="menu-card-price">Rp 10.000</p>
-                        </div>
-                    </div>
-                    <div class="menu-card-item" data-category="minuman">
-                        <div class="menu-card-thumb"></div>
-                        <div class="menu-card-body">
-                            <h3 class="menu-card-name">Es Teh Manis</h3>
-                            <p class="menu-card-price">Rp 5.000</p>
-                        </div>
-                    </div>
-                    <div class="menu-card-item" data-category="original">
-                        <div class="menu-card-thumb"></div>
-                        <div class="menu-card-body">
-                            <h3 class="menu-card-name">Es Pisang Ijo Original</h3>
-                            <p class="menu-card-price">Rp 10.000</p>
-                        </div>
-                    </div>
-                    <div class="menu-card-item" data-category="original">
-                        <div class="menu-card-thumb"></div>
-                        <div class="menu-card-body">
-                            <h3 class="menu-card-name">Es Pisang Ijo Original</h3>
-                            <p class="menu-card-price">Rp 10.000</p>
-                        </div>
-                    </div>
-                    <div class="menu-card-item" data-category="makanan">
-                        <div class="menu-card-thumb"></div>
-                        <div class="menu-card-body">
-                            <h3 class="menu-card-name">Snek Pisang Goreng</h3>
-                            <p class="menu-card-price">Rp 8.000</p>
-                        </div>
-                    </div>
-                </div>
+                <div class="menu-products-grid" id="list-menu"></div>
             </div>
         </main>
+    </div>
+    <div class="popup-kategori" id="popup-kategori">
+        <input type="text" id="categoryInput" placeholder="Nama kategori baru...">
+        <button id="addBtn">Tambah Kategori</button>
     </div>
 
     <script src="../js/sidebar.js"></script>
