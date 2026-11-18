@@ -31,15 +31,5 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault(); 
             window.location.href = './html/beranda.html';
         });
-    }
-
-    // 2. DARI BERANDA (LOGOUT) -> KEMBALI KE LOGIN
-    const btnLogout = document.getElementById('btnLogout');
-    if (btnLogout) {
-        btnLogout.addEventListener('click', () => {
-            // Kembali ke file index.html (Halaman Login Utama)
-            window.location.href = 'index.html';
-        });
-    }
-    
+    }    
 });

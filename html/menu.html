@@ -47,16 +47,15 @@
                             <i class="fa-solid fa-magnifying-glass search-icon-inside"></i>
                             <input type="text" id="searchProduct" placeholder="Search...">
                         </div>
-                        <div class="menu-category-group" id="category">
+                        <div class="menu-btn-actions">
+                            <button class="menu-btn-add" id="categoryBtn"><i class="fa-solid fa-plus"></i> Tambah
+                                Kategori</button>
+                            <button class="menu-btn-add" id="btnTambahMenu"><i class="fa-solid fa-plus"></i>
+                                Tambah Menu </button>
                         </div>
                     </div>
-
-                    <div class="menu-btn-actions">
-                        <button class="menu-btn-add" id="categoryBtn"><i class="fa-solid fa-plus"></i> Tambah Kategori</button>
-                        <a href="tambah-menu.html"><button class="menu-btn-add"><i class="fa-solid fa-plus"></i> Tambah Menu </button></a>
-                    </div>
+                    <div class="menu-category-group" id="category"></div>
                 </div>
-
                 <div class="menu-products-grid" id="list-menu"></div>
             </div>
         </main>
@@ -65,6 +64,7 @@
         <input type="text" id="categoryInput" placeholder="Nama kategori baru...">
         <button id="addBtn">Tambah Kategori</button>
     </div>
+
 
     <script src="../js/sidebar.js"></script>
     <script src="../js/menu-script.js"></script>

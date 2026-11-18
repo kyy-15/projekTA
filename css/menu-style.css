@@ -116,6 +116,7 @@
 /* Container fungsional (Search + Filter + Tombol Aksi) */
 .menu-action-bar {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
@@ -126,7 +127,7 @@
     display: flex;
     align-items: center;
     gap: 16px;
-    flex-wrap: wrap;
+    width: 100%;
 }
 
 /* Kolom Pencarian */
@@ -134,6 +135,7 @@
     position: relative;
     display: flex;
     align-items: center;
+    width: 100%;
 }
 
 .menu-search-box input {
@@ -146,6 +148,7 @@
     width: 210px;
     background-color: #ffffff;
     transition: all 0.2s ease-in-out;
+    width: 100%;
 }
 
 .menu-search-box input:focus {
@@ -196,6 +199,8 @@
 .menu-btn-actions {
     display: flex;
     gap: 12px;
+    height: 38.4px;
+    width: 45%;
 }
 
 .menu-btn-add {
@@ -212,6 +217,7 @@
     align-items: center;
     gap: 8px;
     transition: background-color 0.2s;
+    width: 100%;
 }
 
 .menu-btn-add:hover {
@@ -283,7 +289,7 @@ a {
     text-decoration: none;
 }
 
-#popup-kategori {
+.popup-kategori {
     display: none;
     position: absolute;
     top: 50%;
@@ -291,5 +297,6 @@ a {
     transform: translate(-50%, -50%);
     background-color: var(--white);
     padding: 12px 16px;
-    border-bottom: 1.8px solid var(--stroke);
+    border: 1.5px solid var(--stroke);
+    border-radius: 10px;
 }
