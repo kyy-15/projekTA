@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manajemen Barang - Pisang Ijo Omah</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';">
+    <link rel="stylesheet" href="../css/barang.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../fonts/all.min.css">
+</head>
+
+<body>
+    <div class="dashboard-wrapper">
+        <div id="sidebar-container"></div>
+
+        <main class="main-content">
+            <header class="content-header">
+                <div class="header-left">
+                    <span class="sub-brand">Es Pisang Ijo Oma</span>
+                </div>
+                <div class="header-right">
+                    <div class="user-profile">
+                        <div class="user-info">
+                            <span class="user-name">Heri Sugeng</span>
+                            <span class="user-role">owner</span>
+                        </div>
+                        <div class="user-avatar">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="container">
+
+
+                <h1 class="page-title">Manajemen Barang</h1>
+
+                <div class="toolbar">
+                    <div class="search-box">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" id="searchInput" placeholder="Cari...">
+                    </div>
+                    <div class="actions-right">
+                        <button id="btnTambahBarang" class="btn-primary">+ Tambah Barang</button>
+                        <select id="filterStatus" class="select-filter">
+                            <option value="Semua">Semua</option>
+                            <option value="Sesuai">Sesuai</option>
+                            <option value="Tidak Sesuai">Tidak Sesuai</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Tabel Data Barang -->
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Nama</th>
+                                <th>Kategori</th>
+                                <th>Stok Fisik</th>
+                                <th>Stok Sistem</th>
+                                <th>Selisih</th>
+                                <th>Status Stok</th>
+                                <th>Status Opname</th>
+                                <th class="text-center">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                            <!-- Baris data dimuat dinamis dari renderer.js -->
+                        </tbody>
+                    </table>
+                </div>
+        </main>
+    </div>
+
+    <!-- Modal Popup Box (Tambah / Edit) -->
+    <div id="modalBarang" class="modal-overlay hidden">
+        <div class="modal-box">
+            <h2 id="modalTitle">Tambah Barang</h2>
+            <form id="formBarang">
+                <input type="hidden" id="barangId">
+
+                <div class="form-group">
+                    <label for="kodeBarang">Kode Barang/SKU</label>
+                    <input type="text" id="kodeBarang" placeholder="SKU-001" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="namaBarang">Nama Barang</label>
+                    <div class="input-with-unit">
+                        <input type="text" id="namaBarang" placeholder="Es Batu" required>
+                        <select id="satuanBarang" class="unit-select">
+                            <option value="Kg">Kg</option>
+                            <option value="Liter">Liter</option>
+                            <option value="Pcs">Pcs</option>
+                            <option value="Buah">Buah</option>
+                            <option value="gram">gram</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="kategoriBarang">Kategori</label>
+                    <select id="kategoriBarang" required>
+                        <option value="Bahan Baku">Bahan Baku</option>
+                        <option value="Kemasan">Kemasan</option>
+                        <option value="Toping">Toping</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col">
+                        <label for="stokFisik">Stok Fisik</label>
+                        <input type="text" id="stokFisik" placeholder="10" required>
+                    </div>
+                    <div class="form-group col">
+                        <label for="stokSistem">Stok Sistem</label>
+                        <input type="text" id="stokSistem" placeholder="10" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col">
+                        <label for="hargaBeli">Harga Beli(HPP)</label>
+                        <input type="text" id="hargaBeli" placeholder="Rp 10.000" required>
+                    </div>
+                    <div class="form-group col">
+                        <label for="minimalStok">Minimal Stok</label>
+                        <input type="text" id="minimalStok" placeholder="5" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="keteranganBarang">Keterangan</label>
+                    <textarea id="keteranganBarang" placeholder="(Opsional)" rows="3"></textarea>
+                </div>
+
+                <div class="modal-buttons">
+                    <button type="button" id="btnCancel" class="btn-cancel">Batal</button>
+                    <button type="submit" id="btnSubmit" class="btn-submit">Edit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/barang.js"></script>
+    <script src="../js/sidebar.js"></script>
+
+</body>
+
+</html>

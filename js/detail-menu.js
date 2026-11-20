@@ -169,7 +169,7 @@ function buildModalDropdown() {
 function syncModalBarangInfo() {
   const item = masterBarang.find(b => b.id === modalSelectBarang.value);
   if (item) {
-    modalTxtStok.textContent = `Stok: ${item.stok} ${item.satuan}`;
+    modalTxtStok.textContent = `Stok: ${item.stok_fisik} ${item.satuan}`;
     modalTxtSatuan.textContent = item.satuan;
   }
 }
@@ -188,7 +188,7 @@ document.getElementById('btn-modal-save-item').addEventListener('click', () => {
 
   if (qty <= 0) return alert('Takaran jumlah harus bernilai positif!');
 
-  const modalCost = itemMaster.harga_satuan * qty;
+  const modalCost = itemMaster.harga_beli * qty;
 
   // Cek duplikasi komponen resep
   const sdhAda = resepBahanAktif.find(i => i.id === itemMaster.id);

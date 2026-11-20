@@ -13,24 +13,24 @@ function createWindow() {
       contextIsolation: false
     }
   })
-  mainWindow.loadFile('index.html')
+  // PERBAIKAN: Sesuaikan jalur muat karena file html berada di dalam folder html/
+  mainWindow.loadFile(path.join(__dirname, 'index.html'))
 }
 
-function readKategoriData() {
-  const filePath = path.join(__dirname, 'data', 'kategori.json');
-  
-  // Pastikan folder 'data' sudah dibuat
+// Fungsi pembantu untuk memastikan folder data dan file json dasar ada
+function ensureFileExists(filePath, defaultContent = []) {
   const dirPath = path.dirname(filePath);
   if (!fs.existsSync(dirPath)) {
     fs.mkdirSync(dirPath, { recursive: true });
   }
-
-  // Jika file kategori.json belum ada, buat file baru dengan array kosong
   if (!fs.existsSync(filePath)) {
-    fs.writeFileSync(filePath, JSON.stringify([], null, 2), 'utf-8');
-    return [];
+    fs.writeFileSync(filePath, JSON.stringify(defaultContent, null, 2), 'utf-8');
   }
+}
 
+function readKategoriData() {
+  const filePath = path.join(__dirname, 'data', 'kategori.json');
+  ensureFileExists(filePath);
   const data = fs.readFileSync(filePath, 'utf-8');
   return data ? JSON.parse(data) : [];
 }
@@ -38,31 +38,67 @@ function readKategoriData() {
 // IPC: Mengambil data barang untuk dropdown/resep
 ipcMain.handle('get-barang', async () => {
   const filePath = path.join(__dirname, 'data', 'barang.json');
+  // PERBAIKAN: Pastikan file dibuat otomatis jika belum ada agar tidak melempar error crash
+  ensureFileExists(filePath);
   const data = fs.readFileSync(filePath, 'utf-8');
-  return JSON.parse(data);
+  return data ? JSON.parse(data) : [];
 });
 
-// IPC: Menyimpan Menu Baru ke menu.json
-ipcMain.handle('save-menu', async (event, menuBaru) => {
-  const filePath = path.join(__dirname, 'data/menu.json');
-  let dataMenu = [];
+ipcMain.handle('save-barang', async (event, barangInput) => {
+  const filePath = path.join(__dirname, 'data', 'barang.json');
+  ensureFileExists(filePath);
 
-  if (fs.existsSync(filePath)) {
-    const fileContent = fs.readFileSync(filePath, 'utf-8');
-    dataMenu = fileContent ? JSON.parse(fileContent) : [];
+  let dataBarang = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+
+  if (barangInput.id) {
+    // Mode EDIT: cari index berdasarkan ID string atau number
+    const index = dataBarang.findIndex(b => b.id.toString() === barangInput.id.toString());
+    if (index !== -1) {
+      // PERBAIKAN DATA: Petakan nama properti json agar konsisten dengan contoh data awal Anda
+      dataBarang[index] = { 
+        id: barangInput.id.toString(),
+        nama: barangInput.nama,
+        satuan: barangInput.satuan,
+        stok: barangInput.stok_fisik, // fallback ke key data "stok" resep lama Anda
+        stok_fisik: barangInput.stok_fisik,
+        stok_sistem: barangInput.stok_sistem,
+        harga_satuan: parseFloat(barangInput.harga_beli.toString().replace(/[^0-9.-]/g, '')) || 0,
+        harga_beli: barangInput.harga_beli,
+        minimal_stok: barangInput.minimal_stok,
+        keterangan: barangInput.keterangan,
+        kategori: barangInput.kategori,
+        kode: barangInput.kode
+      };
+    } else {
+      return { success: false, message: "Barang tidak ditemukan" };
+    }
+  } else {
+    // Mode TAMBAH BARU: Buat ID unik otomatis
+    const newId = (dataBarang.length > 0 ? Math.max(...dataBarang.map(b => parseInt(b.id) || 0)) + 1 : 1).toString();
+    dataBarang.push({
+      id: newId,
+      nama: barangInput.nama,
+      satuan: barangInput.satuan,
+      stok: barangInput.stok_fisik,
+      stok_fisik: barangInput.stok_fisik,
+      stok_sistem: barangInput.stok_sistem,
+      harga_satuan: parseFloat(barangInput.harga_beli.toString().replace(/[^0-9.-]/g, '')) || 0,
+      harga_beli: barangInput.harga_beli,
+      minimal_stok: barangInput.minimal_stok,
+      keterangan: barangInput.keterangan,
+      kategori: barangInput.kategori,
+      kode: barangInput.kode
+    });
   }
 
-  dataMenu.push(menuBaru);
-  fs.writeFileSync(filePath, JSON.stringify(dataMenu, null, 2), 'utf-8');
-  return { success: true };
+  fs.writeFileSync(filePath, JSON.stringify(dataBarang, null, 2), 'utf-8');
+  return { success: true, data: dataBarang };
 });
-
-// Tambahkan handler ini di bagian bawah file main.js Anda yang sudah ada
 
 // IPC: Mengambil semua daftar menu untuk dicari berdasarkan ID
 ipcMain.handle('get-all-menu', async () => {
   const filePath = path.join(__dirname, 'data/menu.json');
-  if (!fs.existsSync(filePath)) return [];
+  ensureFileExists(filePath);
   const data = fs.readFileSync(filePath, 'utf-8');
   return data ? JSON.parse(data) : [];
 });
@@ -95,9 +131,9 @@ ipcMain.handle('delete-menu', async (event, menuId) => {
   return { success: true };
 });
 
-
 ipcMain.handle('get-categories', () => {
   const filePath = path.join(__dirname, 'data', 'kategori.json');
+  ensureFileExists(filePath);
   const data = fs.readFileSync(filePath, 'utf-8');
   return JSON.parse(data);
 });
@@ -105,8 +141,6 @@ ipcMain.handle('get-categories', () => {
 // Handler IPC untuk menambah kategori baru
 ipcMain.handle('add-category', (event, newCategoryName) => {
   const filePath = path.join(__dirname, 'data', 'kategori.json');
-  
-  // Memanggil fungsi pembaca yang sudah kita buat di atas
   const categories = readKategoriData();
 
   const newCategory = {
@@ -115,10 +149,33 @@ ipcMain.handle('add-category', (event, newCategoryName) => {
   };
 
   categories.push(newCategory);
-
   fs.writeFileSync(filePath, JSON.stringify(categories, null, 2), 'utf-8');
   return categories;
 });
+
+ipcMain.handle('save-transaksi', async (event, transaksiBaru) => {
+  const filePath = path.join(__dirname, 'data', 'transaksi.json');
+  
+  // Pastikan folder data dan file transaksi.json tersedia
+  ensureFileExists(filePath);
+
+  try {
+    // Baca data transaksi lama
+    const fileContent = fs.readFileSync(filePath, 'utf-8');
+    let dataTransaksi = fileContent ? JSON.parse(fileContent) : [];
+
+    // Tambahkan data transaksi baru ke dalam array
+    dataTransaksi.push(transaksiBaru);
+
+    // Tulis kembali ke file transaksi.json
+    fs.writeFileSync(filePath, JSON.stringify(dataTransaksi, null, 2), 'utf-8');
+    return { success: true };
+  } catch (error) {
+    console.error("Gagal menyimpan transaksi:", error);
+    return { success: false, message: error.message };
+  }
+});
+
 
 app.whenReady().then(() => {
   createWindow()

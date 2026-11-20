@@ -28,9 +28,16 @@
             "jumlah": 1,
             "satuan": "Kg",
             "modal": 3000
+          },
+          {
+            "id": "1",
+            "nama": "Es Pisang Ijo",
+            "jumlah": 1,
+            "satuan": "Kg",
+            "modal": 10000
           }
         ],
-        "hpp_total": 4600
+        "hpp_total": 14600
       },
       "takeaway": {
         "resep": [

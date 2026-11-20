@@ -12,7 +12,9 @@
     z-index: 100;
     box-sizing: border-box
 }
-
+a{
+    text-decoration: none;
+}
 .sidebar-brand {
     padding: 10px 24px 30px 24px;
 }
