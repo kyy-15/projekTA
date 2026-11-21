@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laporan Keuangan</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<link rel="stylesheet" href="/pengaturankasir.css">
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- SIDEBAR -->
+<aside class="sidebar">
+
+    <div class="brand">
+        <span class="brand-mark"></span>
+        <span>Pisang Ijo<br>Omah</span>
+    </div>
+
+    <ul class="nav">
+
+        <li><a href="#" data-page="Beranda">
+            <i class="fa-solid fa-house"></i>Beranda
+        </a></li>
+
+        <li><a href="#" data-page="Menu">
+            <i class="fa-solid fa-utensils"></i>Menu
+        </a></li>
+
+        <li><a href="#" data-page="Transaksi">
+            <i class="fa-solid fa-receipt"></i>Transaksi
+        </a></li>
+
+        <li><a href="#" data-page="Manajemen Barang">
+            <i class="fa-solid fa-box"></i>Manajemen Barang
+        </a></li>
+
+        <li><a href="#" data-page="Stock Opname">
+            <i class="fa-solid fa-clipboard-list"></i>Stock Opname
+        </a></li>
+
+        <li><a href="#" data-page="Manajemen Pengguna">
+            <i class="fa-solid fa-users"></i>Manajemen Pengguna
+        </a></li>
+
+        <li><a href="#" data-page="Laporan Keuangan" class="active">
+            <i class="fa-solid fa-chart-line"></i>Laporan Keuangan
+        </a></li>
+
+        <li><a href="#" data-page="Riwayat Aktivitas">
+            <i class="fa-solid fa-clock-rotate-left"></i>Riwayat Aktivitas
+        </a></li>
+
+        <li><a href="#" data-page="Pengaturan">
+            <i class="fa-solid fa-gear"></i>Pengaturan
+        </a></li>
+
+        <li><a href="#" data-page="Notifikasi">
+            <i class="fa-solid fa-bell"></i>Notifikasi
+            <span class="count">2</span>
+        </a></li>
+
+    </ul>
+
+    <button class="logout" id="logoutBtn">
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        Log out
+    </button>
+
+</aside>
+
+    <!-- MAIN -->
+<main class="main">
+
+<header class="topbar">
+
+    <div class="store">Es Pisang Ijo Oma</div>
+
+    <div class="profile">
+        <div>
+            <strong>Heri Sugeng</strong>
+            <small>owner</small>
+        </div>
+
+        <span class="avatar">
+            <i class="fa-solid fa-user"></i>
+        </span>
+    </div>
+
+</header>
+
+<section class="content">
+
+<h1 id="pageTitle">Pengaturan</h1>
+
+            <!-- TABS -->
+            <div class="tabs">
+                <button class="tab active" id="profilTab"
+                    onclick="showTab('profil')">
+                    Profil
+                </button>
+
+            </div>
+
+
+            <!-- PENGATURAN PROFIL DAN PRINTER -->
+            <div class="settings-container">
+
+                <!-- CARD PROFIL -->
+                <div class="setting-card" id="profilCard">
+
+                    <h2>Profil Mandiri</h2>
+
+                    <div class="profile-info">
+
+                        <div class="avatar">
+                            <svg viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="70" cy="70" r="70" fill="#c8f0df"/>
+                                <path d="M25 140 Q25 105 50 100 L90 100 Q115 105 115 140" fill="#168a65"/>
+                                <path d="M37 90 Q25 35 65 17 Q105 15 110 80 L105 115 L91 105 L48 110 L34 105Z" fill="#292b28"/>
+                                <ellipse cx="70" cy="63" rx="30" ry="37" fill="#f5c6a5"/>
+                                <path d="M40 55 Q38 17 70 16 Q103 16 101 58 L93 43 Q77 29 54 43 L44 62Z" fill="#292b28"/>
+                                <path d="M42 58 Q32 83 46 103 L35 110 Q24 85 35 57Z" fill="#292b28"/>
+                                <path d="M98 58 Q108 83 94 103 L105 110 Q116 85 105 57Z" fill="#292b28"/>
+                                <circle cx="59" cy="64" r="3" fill="#292b28"/>
+                                <circle cx="81" cy="64" r="3" fill="#292b28"/>
+                                <path d="M64 81 Q70 87 77 81" stroke="#b96c61" stroke-width="2" fill="none" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+
+                        <div class="profile-text">
+                            <h3>Kasir A</h3>
+                            <p>kasirA@pisangijooma.com</p>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label>Nama Tampilan</label>
+                        <input type="text" id="namaTampilan"
+                            value="Kasir A">
+                    </div>
+
+                    <div class="password-section">
+                        <h3>Ganti Kata Sandi</h3>
+
+                        <button class="outline-button"
+                            onclick="openPasswordModal()">
+                            Ubah Password
+                        </button>
+                    </div>
+
+                </div>
+
+
+                <!-- CARD PRINTER -->
+                <div class="setting-card" id="printerCard">
+
+                    <h2>Koneksi Printer</h2>
+
+                    <div class="connection-status">
+                        <p>Status Koneksi</p>
+
+                        <div class="status-text" id="statusText">
+                            <span class="status-dot"></span>
+                            <span id="statusLabel">Tidak Terhubung</span>
+                        </div>
+                    </div>
+
+                    <div class="printer-box">
+
+                        <p>Jenis Koneksi</p>
+
+                        <div class="connection-options">
+
+                            <label>
+                                <input type="radio" name="connection"
+                                    value="Bluetooth" checked>
+                                <span>Bluetooth</span>
+                            </label>
+
+                            <label>
+                                <input type="radio" name="connection"
+                                    value="Wi-Fi">
+                                <span>Wi-Fi</span>
+                            </label>
+
+                        </div>
+
+                        <button class="connect-button"
+                            onclick="connectPrinter()">
+                            Hubungkan Printer
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- MODAL UBAH PASSWORD -->
+<div class="modal" id="passwordModal">
+
+    <div class="modal-content">
+        <h2>Ubah Password</h2>
+
+        <label>Password Lama</label>
+        <input type="password" id="oldPassword"
+            placeholder="Masukkan password lama">
+
+        <label>Password Baru</label>
+        <input type="password" id="newPassword"
+            placeholder="Masukkan password baru">
+
+        <label>Konfirmasi Password</label>
+        <input type="password" id="confirmPassword"
+            placeholder="Ulangi password baru">
+
+        <div class="modal-buttons">
+            <button class="cancel-button"
+                onclick="closePasswordModal()">
+                Batal
+            </button>
+
+            <button class="save-button"
+                onclick="savePassword()">
+                Simpan
+            </button>
+        </div>
+    </div>
+
+</div>
+
+<script src="/pengaturankasir.js"></script>
+</body>
+</html>

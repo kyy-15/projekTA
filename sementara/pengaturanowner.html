@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengaturan Owner - Es Pisang Ijo Oma</title>
+
+    <!-- Font Awesome (untuk ikon database di popup) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="pengaturanowner.css">
+</head>
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+<aside class="sidebar">
+
+    <div class="brand">
+        <span class="brand-mark"></span>
+        <span>Pisang Ijo<br>Omah</span>
+    </div>
+
+    <ul class="nav">
+
+        <li><a href="#" data-page="Beranda">
+            <i class="fa-solid fa-house"></i>Beranda
+        </a></li>
+
+        <li><a href="#" data-page="Menu">
+            <i class="fa-solid fa-utensils"></i>Menu
+        </a></li>
+
+        <li><a href="#" data-page="Transaksi">
+            <i class="fa-solid fa-receipt"></i>Transaksi
+        </a></li>
+
+        <li><a href="#" data-page="Manajemen Barang">
+            <i class="fa-solid fa-box"></i>Manajemen Barang
+        </a></li>
+
+        <li><a href="#" data-page="Stock Opname">
+            <i class="fa-solid fa-clipboard-list"></i>Stock Opname
+        </a></li>
+
+        <li><a href="#" data-page="Manajemen Pengguna">
+            <i class="fa-solid fa-users"></i>Manajemen Pengguna
+        </a></li>
+
+        <li><a href="laporankeuangan.html" data-page="Laporan Keuangan">
+    <i class="fa-solid fa-chart-line"></i>Laporan Keuangan
+</a></li>
+
+        <li><a href="#" data-page="Riwayat Aktivitas">
+            <i class="fa-solid fa-clock-rotate-left"></i>Riwayat Aktivitas
+        </a></li>
+
+       <li><a href="pengaturanowner.html" data-page="Pengaturan" class="active">
+    <i class="fa-solid fa-gear"></i>Pengaturan
+</a></li>
+
+        <li><a href="#" data-page="Notifikasi">
+            <i class="fa-solid fa-bell"></i>Notifikasi
+            <span class="count">2</span>
+        </a></li>
+
+    </ul>
+
+    <button class="logout" id="logoutBtn">
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        Log out
+    </button>
+
+</aside>
+
+
+    <!-- MAIN -->
+<main class="main">
+
+<header class="topbar">
+
+    <div class="store">Es Pisang Ijo Oma</div>
+
+    <div class="profile">
+        <div>
+            <strong>Heri Sugeng</strong>
+            <small>owner</small>
+        </div>
+
+        <span class="avatar">
+            <i class="fa-solid fa-user"></i>
+        </span>
+    </div>
+
+</header>
+
+<section class="content">
+
+<h1 id="pageTitle">Pengaturan</h1>
+
+            <!-- TABS -->
+            <div class="tabs">
+
+    <button class="tab active"
+        onclick="showTab('profilOutlet', this)">
+        Profil Outlet
+    </button>
+
+</div>
+
+
+            <!-- SETTINGS CONTAINER -->
+            <div class="settings-container">
+
+                <!-- PROFIL OUTLET -->
+                <div class="setting-card profile-card"
+                    id="profilOutlet">
+
+                    <h2>Profil Outlet</h2>
+
+                    <div class="outlet-logo">
+
+                        <div class="logo-preview" id="logoPreview">
+                            <img id="previewImage" src="" alt="Logo Outlet">
+                        </div>
+
+                        <div class="outlet-name">
+                            <p>Es Pisang Ijo Oma</p>
+
+                            <label for="logoInput" class="upload-button">
+                                Ubah Logo
+                            </label>
+
+                            <input type="file" id="logoInput"
+                                accept="image/*" hidden>
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="namaOutlet">Nama Outlet</label>
+                        <input type="text" id="namaOutlet"
+                            value="Es Pisang Ijo Oma">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="alamatOutlet">Alamat</label>
+                        <input type="text" id="alamatOutlet"
+                            value="Jl. Melati No 12 Malang">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nomorOutlet">No. Tersimpan</label>
+                        <input type="text" id="nomorOutlet"
+                            value="081595678765">
+                    </div>
+
+                </div>
+
+
+                <!-- BAGIAN KANAN -->
+                <div class="right-content">
+
+                    <!-- BIAYA DAN PAJAK -->
+                    <div class="setting-card tax-card"
+                        id="biayaPajak">
+
+                        <h2>Manajemen Biaya & Pajak</h2>
+
+                        <div class="form-group">
+                            <label for="pajak">Pajak PPN</label>
+                            <div class="input-percent">
+                                <input type="number" id="pajak"
+                                    value="11" min="0" max="100">
+                                <span>%</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="biayaTambahan">Biaya Tambahan</label>
+
+                            <div class="input-percent">
+                                <input type="number" id="biayaTambahan"
+                                    value="0" min="0" max="100">
+                                <span>%</span>
+                            </div>
+                        </div>
+
+                        <button class="save-button" onclick="saveSettings()">
+                            Simpan
+                        </button>
+
+                    </div>
+
+
+                    <!-- BACKUP DATA -->
+<div class="setting-card backup-card" id="backupData">
+
+    <h2>Backup Data</h2>
+
+    <button class="backup-button" type="button" id="btnBackupData">
+        Backup Data
+    </button>
+
+</div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<!-- POP UP BACKUP DATA -->
+<div class="modal-backup" id="modalBackup">
+    <div class="modal-content">
+
+        <button class="close-modal" id="closeBackup">&times;</button>
+
+        <div class="backup-icon">
+            <i class="fa-solid fa-database"></i>
+        </div>
+
+        <h2>Backup Data</h2>
+
+        <p class="backup-desc">
+            Cadangkan data outlet untuk menjaga keamanan
+            informasi Es Pisang Ijo Oma.
+        </p>
+
+        <div class="backup-info">
+            <h4>Data yang akan dicadangkan:</h4>
+            <p>✓ Data Produk</p>
+            <p>✓ Data Transaksi</p>
+            <p>✓ Data Penjualan</p>
+            <p>✓ Pengaturan Outlet</p>
+        </div>
+
+        <div class="backup-actions">
+            <button type="button" class="btn-batal" id="batalBackup">
+                Batal
+            </button>
+
+            <button type="button" class="btn-simpan-backup" id="simpanBackup">
+                Backup Sekarang
+            </button>
+        </div>
+
+    </div>
+</div>
+
+<script src="pengaturanowner.js"></script>
+</body>
+</html>
