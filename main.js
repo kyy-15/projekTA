@@ -9,8 +9,8 @@ function createWindow() {
     height: 600,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
-      nodeIntegration: false,
-      contextIsolation: true
+      nodeIntegration: true,
+      contextIsolation: false
     }
   })
   // PERBAIKAN: Sesuaikan jalur muat karena file html berada di dalam folder html/
