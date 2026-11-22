@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain } = require('electron')
+﻿const { app, BrowserWindow, ipcMain } = require('electron')
 const path = require('node:path')
 const fs = require('fs')
 
@@ -9,8 +9,8 @@ function createWindow() {
     height: 600,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
-      nodeIntegration: true,
-      contextIsolation: false
+      nodeIntegration: false,
+      contextIsolation: true
     }
   })
   // PERBAIKAN: Sesuaikan jalur muat karena file html berada di dalam folder html/
@@ -188,3 +188,5 @@ app.whenReady().then(() => {
 app.on('window-all-closed', function () {
   if (process.platform !== 'darwin') app.quit()
 })
+
+

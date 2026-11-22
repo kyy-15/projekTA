@@ -30,7 +30,7 @@
 }
 
 body {
-  font-family: var(--font-inter);
+  font-family: 'Poppins', sans-serif;
   background-color: var(--bg-main);
   color: var(--text-dark);
   display: flex;
@@ -47,140 +47,6 @@ body {
   min-height: 100vh;
 }
 
-/* Sidebar Navigation */
-.sidebar {
-  width: 280px;
-  background: var(--bg-sidebar);
-  border-right: 1px solid var(--border-color);
-  display: flex;
-  flex-direction: column;
-  padding: 24px 16px;
-  flex-shrink: 0;
-}
-
-.brand-header {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding-bottom: 24px;
-  margin-bottom: 12px;
-}
-
-.brand-logo-icon {
-  width: 45px;
-  height: 45px;
-  background-color: var(--primary-dark);
-  border-radius: 8px;
-  flex-shrink: 0;
-}
-
-.brand-title {
-  font-family: var(--font-inter);
-  font-size: 24px;
-  font-weight: 600;
-  color: var(--primary);
-  line-height: 1.2;
-}
-
-.nav-menu {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  flex: 1;
-}
-
-.nav-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 10px 15px;
-  border-radius: 8px;
-  text-decoration: none;
-  color: var(--text-dark);
-  font-size: 15px;
-  font-weight: 400;
-  transition: all 0.2s ease;
-  cursor: pointer;
-}
-
-.nav-item svg {
-  width: 20px;
-  height: 20px;
-  min-width: 20px;
-  min-height: 20px;
-  flex-shrink: 0;
-}
-
-.nav-item:hover {
-  background-color: #F5F7F9;
-}
-
-.nav-item.active {
-  background-color: var(--primary-light);
-  color: var(--primary-dark);
-  font-weight: 500;
-}
-
-.nav-icon {
-  width: 20px;
-  height: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-muted);
-}
-
-.nav-item.active .nav-icon {
-  color: var(--primary-dark);
-}
-
-.nav-badge {
-  margin-left: auto;
-  background: #F44336;
-  color: white;
-  font-size: 12px;
-  font-family: var(--font-poppins);
-  font-weight: 500;
-  width: 22px;
-  height: 22px;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.sidebar-footer {
-  margin-top: auto;
-  padding-top: 16px;
-}
-
-.btn-logout {
-  width: 100%;
-  background: var(--primary);
-  color: white;
-  border: none;
-  padding: 12px 16px;
-  border-radius: 10px;
-  font-family: var(--font-inter);
-  font-size: 15px;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
-  transition: opacity 0.2s ease;
-}
-
-.btn-logout:hover {
-  opacity: 0.9;
-}
-
-.logout-icon {
-  width: 20px;
-  height: 20px;
-  background: transparent;
-  display: inline-block;
-}
 
 /* ==========================================================================
    3. MAIN CONTENT AREA
@@ -190,6 +56,7 @@ body {
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+  margin-left: 260px;
 }
 
 /* Top Bar Header */
@@ -203,7 +70,7 @@ body {
 }
 
 .top-header h1 {
-  font-family: var(--font-poppins);
+  font-family: 'Poppins', sans-serif;
   font-size: 24px;
   font-weight: 500;
   color: #000000;
@@ -229,7 +96,7 @@ body {
   box-shadow: 0px 4px 4px rgba(70, 186, 47, 0.25);
   border-radius: 10px;
   padding: 14px 28px;
-  font-family: var(--font-poppins);
+  font-family: 'Poppins', sans-serif;
   font-size: 20px;
   font-weight: 500;
   color: #000000;
@@ -264,7 +131,7 @@ body {
   border: none;
   outline: none;
   width: 100%;
-  font-family: var(--font-poppins);
+  font-family: 'Poppins', sans-serif;
   font-size: 18px;
   color: #000;
 }
@@ -275,7 +142,7 @@ body {
 
 /* Table Section Title */
 .section-title {
-  font-family: var(--font-poppins);
+  font-family: 'Poppins', sans-serif;
   font-size: 28px;
   font-weight: 600;
   color: #000000;
@@ -304,7 +171,7 @@ body {
 }
 
 .custom-table th {
-  font-family: var(--font-poppins);
+  font-family: 'Poppins', sans-serif;
   font-size: 16px;
   font-weight: 500;
   color: #000000;
@@ -332,7 +199,7 @@ body {
 .custom-table td {
   padding: 18px 20px;
   vertical-align: middle;
-  font-family: var(--font-poppins);
+  font-family: 'Poppins', sans-serif;
   border-bottom: 1px solid #000000;
 }
 
@@ -460,7 +327,7 @@ body {
 }
 
 .modal-header h3 {
-  font-family: var(--font-poppins);
+  font-family: 'Poppins', sans-serif;
   font-size: 20px;
   font-weight: 600;
 }
@@ -479,7 +346,7 @@ body {
 
 .form-group label {
   display: block;
-  font-family: var(--font-poppins);
+  font-family: 'Poppins', sans-serif;
   font-size: 14px;
   margin-bottom: 6px;
   font-weight: 500;
@@ -497,7 +364,7 @@ body {
   padding: 10px 14px;
   border: 1px solid var(--border-color);
   border-radius: 8px;
-  font-family: var(--font-poppins);
+  font-family: 'Poppins', sans-serif;
   font-size: 14px;
 }
 
@@ -514,7 +381,7 @@ body {
   border: none;
   padding: 10px 20px;
   border-radius: 8px;
-  font-family: var(--font-poppins);
+  font-family: 'Poppins', sans-serif;
   font-weight: 500;
   cursor: pointer;
 }
@@ -525,7 +392,7 @@ body {
   border: none;
   padding: 10px 20px;
   border-radius: 8px;
-  font-family: var(--font-poppins);
+  font-family: 'Poppins', sans-serif;
   font-weight: 500;
   cursor: pointer;
 }
@@ -534,9 +401,6 @@ body {
    6. RESPONSIVE DESIGN
    ========================================================================== */
 @media (max-width: 1024px) {
-  .sidebar {
-    width: 240px;
-  }
   .content-body {
     padding: 24px;
   }
@@ -552,11 +416,6 @@ body {
 @media (max-width: 768px) {
   .app-container {
     flex-direction: column;
-  }
-  .sidebar {
-    width: 100%;
-    border-right: none;
-    border-bottom: 1px solid var(--border-color);
   }
   .table-container {
     overflow-x: auto;

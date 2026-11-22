@@ -7,7 +7,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background: #f5f6f7;
     color: #222;
 }
@@ -18,92 +18,12 @@ body {
     background: white;
 }
 
-/* SIDEBAR */
-.sidebar {
-    width: 225px;
-    padding: 30px 14px 20px;
-    border-right: 1px solid #eee;
-    display: flex;
-    flex-direction: column;
-    flex-shrink: 0;
-}
-
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin: 0 8px 40px;
-    color: #16d65b;
-    font-size: 21px;
-    line-height: 1.4;
-    font-weight: 600;
-}
-
-.brand-mark {
-    width: 30px;
-    height: 30px;
-    background: #078b3a;
-}
-
-.nav {
-    list-style: none;
-}
-
-.nav li {
-    margin-bottom: 5px;
-}
-
-.nav a {
-    display: flex;
-    align-items: center;
-    gap: 11px;
-    padding: 11px 12px;
-    border-radius: 8px;
-    color: #526579;
-    text-decoration: none;
-    font-size: 12px;
-    cursor: pointer;
-}
-
-.nav a i {
-    width: 17px;
-}
-
-.nav a:hover {
-    background: #eefbf2;
-}
-
-.nav a.active {
-    background: #8aefae;
-    color: #087c36;
-    font-weight: 600;
-}
-
-.count {
-    margin-left: auto;
-    background: red;
-    color: white;
-    padding: 2px 6px;
-    border-radius: 4px;
-}
-
-.logout {
-    margin-top: auto;
-    padding: 11px;
-    background: #16d65b;
-    color: white;
-    border: none;
-    border-radius: 7px;
-    cursor: pointer;
-    text-align: left;
-}
-
-
 
 /* MAIN */
 .main {
     flex: 1;
     min-width: 0;
+    margin-left: 260px;
 }
 
 /* HEADER (sama dengan Laporan Keuangan) */
@@ -117,14 +37,14 @@ body {
 }
 
 .store {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: #078b3a;
     font-size: 14px;
     font-weight: 600;
 }
 
 .profile {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     display: flex;
     align-items: center;
     gap: 12px;
@@ -444,11 +364,6 @@ h1 {
 
 /* RESPONSIVE */
 @media (max-width: 1000px) {
-    .sidebar {
-        width: 220px;
-        min-width: 220px;
-    }
-
     .settings-container {
         grid-template-columns: 1fr;
     }
@@ -459,12 +374,6 @@ h1 {
 }
 
 @media (max-width: 600px) {
-    .sidebar {
-        width: 75px;
-        min-width: 75px;
-        padding: 20px 8px;
-    }
-
     .logo {
         justify-content: center;
         padding: 0;

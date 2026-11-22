@@ -1,74 +1,20 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="id">
 <head>
+    <link rel="stylesheet" href="../css/app-theme.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../fonts/all.min.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Laporan Keuangan - Es Pisang Ijo Omah</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="laporankeuangan.css">
+  <link rel="stylesheet" href="../css/laporankeuangan.css">
 </head>
 <body>
   <div class="app">
 
     <!-- SIDEBAR -->
-<aside class="sidebar">
-
-    <div class="brand">
-        <span class="brand-mark"></span>
-        <span>Pisang Ijo<br>Omah</span>
-    </div>
-
-    <ul class="nav">
-
-        <li><a href="#" data-page="Beranda">
-            <i class="fa-solid fa-house"></i>Beranda
-        </a></li>
-
-        <li><a href="#" data-page="Menu">
-            <i class="fa-solid fa-utensils"></i>Menu
-        </a></li>
-
-        <li><a href="#" data-page="Transaksi">
-            <i class="fa-solid fa-receipt"></i>Transaksi
-        </a></li>
-
-        <li><a href="#" data-page="Manajemen Barang">
-            <i class="fa-solid fa-box"></i>Manajemen Barang
-        </a></li>
-
-        <li><a href="#" data-page="Stock Opname">
-            <i class="fa-solid fa-clipboard-list"></i>Stock Opname
-        </a></li>
-
-        <li><a href="#" data-page="Manajemen Pengguna">
-            <i class="fa-solid fa-users"></i>Manajemen Pengguna
-        </a></li>
-
-        <li><a href="#" data-page="Laporan Keuangan" class="active">
-            <i class="fa-solid fa-chart-line"></i>Laporan Keuangan
-        </a></li>
-
-        <li><a href="#" data-page="Riwayat Aktivitas">
-            <i class="fa-solid fa-clock-rotate-left"></i>Riwayat Aktivitas
-        </a></li>
-
-        <li><a href="#" data-page="Pengaturan">
-            <i class="fa-solid fa-gear"></i>Pengaturan
-        </a></li>
-
-        <li><a href="#" data-page="Notifikasi">
-            <i class="fa-solid fa-bell"></i>Notifikasi
-            <span class="count">2</span>
-        </a></li>
-
-    </ul>
-
-    <button class="logout" id="logoutBtn">
-        <i class="fa-solid fa-arrow-right-from-bracket"></i>
-        Log out
-    </button>
-
-</aside>
+<div id="sidebar-container"></div>
 
     <!-- MAIN -->
     <main class="main">
@@ -82,12 +28,12 @@
         </div>
         <div class="top-right">
           <div class="date-pill">
-            <span>📅</span>
+            <span>ðŸ“…</span>
             <span id="dateText">Rabu, 18 Nov 2026</span>
-            <span class="chev">⌄</span>
+            <span class="chev">âŒ„</span>
           </div>
           <div class="user">
-            <div class="avatar"><span class="online"></span>👤</div>
+            <div class="avatar"><span class="online"></span>ðŸ‘¤</div>
             <div class="user-info"><strong>Heri Sugeng</strong><small>owner</small></div>
           </div>
         </div>
@@ -95,15 +41,15 @@
 
       <!-- TABS -->
       <div class="tabs" id="tabs">
-        <button class="tab active" data-period="harian">📅 Harian</button>
-        <button class="tab" data-period="mingguan">📅 Mingguan</button>
-        <button class="tab" data-period="bulanan">📅 Bulanan</button>
+        <button class="tab active" data-period="harian">ðŸ“… Harian</button>
+        <button class="tab" data-period="mingguan">ðŸ“… Mingguan</button>
+        <button class="tab" data-period="bulanan">ðŸ“… Bulanan</button>
       </div>
 
       <!-- SUMMARY -->
       <section class="summary">
         <div class="card balance">
-          <div class="wallet">👛</div>
+          <div class="wallet">ðŸ‘›</div>
           <div class="balance-text">
             <span>Saldo Kas</span>
             <h3 id="saldo">Rp 1.250.000</h3>
@@ -114,15 +60,15 @@
 
         <div class="stats">
           <div class="card stat">
-            <div class="stat-ico green">⬆</div>
+            <div class="stat-ico green">â¬†</div>
             <div><span>Pemasukan</span><strong id="income">Rp 950.000</strong></div>
           </div>
           <div class="card stat">
-            <div class="stat-ico red">⬇</div>
+            <div class="stat-ico red">â¬‡</div>
             <div><span>Pengeluaran</span><strong id="expense">Rp 320.000</strong></div>
           </div>
           <div class="card stat">
-            <div class="stat-ico green">📊</div>
+            <div class="stat-ico green">ðŸ“Š</div>
             <div><span>Laba</span><strong id="profit">Rp 930.000</strong></div>
           </div>
           <div class="card stat">
@@ -136,7 +82,7 @@
       <section class="charts">
         <div class="card chart-card">
           <div class="card-head">
-            <h4><span class="h-ico">📊</span> Grafik Keuangan</h4>
+            <h4><span class="h-ico">ðŸ“Š</span> Grafik Keuangan</h4>
             <div class="legend">
               <span><i class="dot g"></i>Pemasukan</span>
               <span><i class="dot r"></i>Pengeluaran</span>
@@ -150,7 +96,7 @@
 
         <div class="card donut-card">
           <div class="card-head">
-            <h4><span class="h-ico">💼</span> Pengeluaran per Kategori</h4>
+            <h4><span class="h-ico">ðŸ’¼</span> Pengeluaran per Kategori</h4>
           </div>
           <div class="donut-wrap">
             <div class="donut" id="donut">
@@ -165,8 +111,8 @@
       <section class="bottom">
         <div class="card tx-card">
           <div class="card-head">
-            <h4><span class="h-ico">☰</span> Riwayat Transaksi</h4>
-            <a href="#" class="see-all">Lihat Semua →</a>
+            <h4><span class="h-ico">â˜°</span> Riwayat Transaksi</h4>
+            <a href="#" class="see-all">Lihat Semua â†’</a>
           </div>
           <div class="chips" id="chips">
             <button class="chip active" data-filter="all">Semua</button>
@@ -186,15 +132,15 @@
         <div class="side-actions">
           <div class="card export">
             <div class="export-top">
-              <div class="export-ico">📄</div>
+              <div class="export-ico">ðŸ“„</div>
               <div>
                 <strong>Export Laporan</strong>
                 <p>Download laporan keuangan dalam format CSV</p>
               </div>
             </div>
-            <button class="btn btn-dark" id="btnExport">⬇ Export CSV</button>
+            <button class="btn btn-dark" id="btnExport">â¬‡ Export CSV</button>
           </div>
-          <button class="btn btn-big" id="btnAdd">＋ Catat Transaksi</button>
+          <button class="btn btn-big" id="btnAdd">ï¼‹ Catat Transaksi</button>
         </div>
       </section>
     </main>
@@ -226,6 +172,10 @@
     </form>
   </div>
 
-  <script src="laporankeuangan.js"></script>
+  <script src="../js/laporankeuangan.js"></script>
+    <script src="../js/sidebar.js"></script>
 </body>
 </html>
+
+
+

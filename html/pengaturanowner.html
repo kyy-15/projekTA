@@ -1,6 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="id">
 <head>
+    <link rel="stylesheet" href="../css/app-theme.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../fonts/all.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pengaturan Owner - Es Pisang Ijo Oma</title>
@@ -8,71 +11,14 @@
     <!-- Font Awesome (untuk ikon database di popup) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <link rel="stylesheet" href="pengaturanowner.css">
+    <link rel="stylesheet" href="../css/pengaturanowner.css">
 </head>
 <body>
 
 <div class="app">
 
     <!-- SIDEBAR -->
-<aside class="sidebar">
-
-    <div class="brand">
-        <span class="brand-mark"></span>
-        <span>Pisang Ijo<br>Omah</span>
-    </div>
-
-    <ul class="nav">
-
-        <li><a href="#" data-page="Beranda">
-            <i class="fa-solid fa-house"></i>Beranda
-        </a></li>
-
-        <li><a href="#" data-page="Menu">
-            <i class="fa-solid fa-utensils"></i>Menu
-        </a></li>
-
-        <li><a href="#" data-page="Transaksi">
-            <i class="fa-solid fa-receipt"></i>Transaksi
-        </a></li>
-
-        <li><a href="#" data-page="Manajemen Barang">
-            <i class="fa-solid fa-box"></i>Manajemen Barang
-        </a></li>
-
-        <li><a href="#" data-page="Stock Opname">
-            <i class="fa-solid fa-clipboard-list"></i>Stock Opname
-        </a></li>
-
-        <li><a href="#" data-page="Manajemen Pengguna">
-            <i class="fa-solid fa-users"></i>Manajemen Pengguna
-        </a></li>
-
-        <li><a href="laporankeuangan.html" data-page="Laporan Keuangan">
-    <i class="fa-solid fa-chart-line"></i>Laporan Keuangan
-</a></li>
-
-        <li><a href="#" data-page="Riwayat Aktivitas">
-            <i class="fa-solid fa-clock-rotate-left"></i>Riwayat Aktivitas
-        </a></li>
-
-       <li><a href="pengaturanowner.html" data-page="Pengaturan" class="active">
-    <i class="fa-solid fa-gear"></i>Pengaturan
-</a></li>
-
-        <li><a href="#" data-page="Notifikasi">
-            <i class="fa-solid fa-bell"></i>Notifikasi
-            <span class="count">2</span>
-        </a></li>
-
-    </ul>
-
-    <button class="logout" id="logoutBtn">
-        <i class="fa-solid fa-arrow-right-from-bracket"></i>
-        Log out
-    </button>
-
-</aside>
+<div id="sidebar-container"></div>
 
 
     <!-- MAIN -->
@@ -235,10 +181,10 @@
 
         <div class="backup-info">
             <h4>Data yang akan dicadangkan:</h4>
-            <p>✓ Data Produk</p>
-            <p>✓ Data Transaksi</p>
-            <p>✓ Data Penjualan</p>
-            <p>✓ Pengaturan Outlet</p>
+            <p>âœ“ Data Produk</p>
+            <p>âœ“ Data Transaksi</p>
+            <p>âœ“ Data Penjualan</p>
+            <p>âœ“ Pengaturan Outlet</p>
         </div>
 
         <div class="backup-actions">
@@ -254,6 +200,10 @@
     </div>
 </div>
 
-<script src="pengaturanowner.js"></script>
+<script src="../js/pengaturanowner.js"></script>
+    <script src="../js/sidebar.js"></script>
 </body>
 </html>
+
+
+

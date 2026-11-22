@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+    <link rel="stylesheet" href="../css/app-theme.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../fonts/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pisang Ijo Omah - Notifikasi</title>
+
+    <!-- Google Fonts: Inter & Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/notifikasi.css">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            green: '#1DDB5C',
+                            darkGreen: '#13903D',
+                            activeBg: '#97F2B5',
+                            lightBg: 'rgba(29, 219, 92, 0.25)',
+                            badgeRed: '#F44336'
+                        },
+                        darkText: '#1F374C'
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                        poppins: ['Poppins', 'sans-serif'],
+                        quicksand: ['Quicksand', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../css/notifikasi.css">
+</head>
+<body class="h-screen flex overflow-hidden bg-white">
+
+    <!-- Mobile Backdrop -->
+    <div id="sidebar-backdrop" onclick="toggleSidebar()" class="fixed inset-0 bg-black/40 z-40 lg:hidden hidden"></div>
+
+    <!-- SIDEBAR PATEN -->
+    <div id="sidebar-container"></div>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="main-wrapper flex-1 overflow-y-auto p-6 md:p-12">
+      
+      <!-- PAGE HEADER TITLE -->
+      <h1 class="page-title">Notifikasi</h1>
+      <div class="title-divider"></div>
+
+      <!-- FILTER TABS -->
+      <div class="filter-container">
+        <button class="filter-tab active" onclick="filterCategory('semua', this)">Semua</button>
+        <button class="filter-tab" onclick="filterCategory('stok', this)">Stok</button>
+        <button class="filter-tab" onclick="filterCategory('pembayaran', this)">Pembayaran</button>
+        <button class="filter-tab" onclick="filterCategory('laporan', this)">Laporan</button>
+      </div>
+
+      <!-- NOTIFICATIONS CARDS LIST -->
+      <div class="notifications-list" id="notificationsList">
+        
+        <!-- CARD 1 -->
+        <div class="notification-card" data-category="stok">
+          <h2 class="notification-title">Stok Menipis</h2>
+          <p class="notification-body">Stok Sedotan: 2 / 50 (tersisa). Segera lakukan pembelian untuk menghindari kehabisan stok.</p>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="notification-card" data-category="stok">
+          <h2 class="notification-title">Stok Habis</h2>
+          <p class="notification-body">Stok Tepung Tapioka habis</p>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="notification-card" data-category="pembayaran">
+          <h2 class="notification-title">Transaksi Dibatalkan</h2>
+          <p class="notification-body">Kasir A membatalkan transaksi #TRX001390.</p>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="notification-card" data-category="laporan">
+          <h2 class="notification-title">Pengumuman Harian</h2>
+          <p class="notification-body">Take home: Nasi anget mulai dari Rp 8.000</p>
+        </div>
+
+      </div>
+
+      <div class="no-notifications" id="noNotifications">Tidak ada notifikasi dalam kategori ini.</div>
+
+    </main>
+
+    <script src="../js/notifikasi.js"></script>
+
+    <script src="../js/sidebar.js"></script>
+</body>
+</html>
+
+
+
+

@@ -25,7 +25,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: var(--bg);
-    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
 
 }
@@ -1004,11 +1004,6 @@ tbody tr:hover {
 
 @media (max-width: 1100px) {
 
-    .sidebar {
-        width: 200px;
-        min-width: 200px;
-    }
-
     .main-content {
         margin-left: 200px;
     }
@@ -1035,12 +1030,6 @@ tbody tr:hover {
 }
 
 @media (max-width: 760px) {
-
-    .sidebar {
-        width: 65px;
-        min-width: 65px;
-        padding: 15px 7px;
-    }
 
     .sidebar-logo img {
         width: 45px;

@@ -4,7 +4,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (sidebarContainer) {
         // Mengambil file HTML sidebar secara lokal
         fetch('sidebar.html')
-            .then(response => response.text())
+            .then(response => {
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                return response.text();
+            })
             .then(data => {
                 sidebarContainer.innerHTML = data;
                 tandaiMenuAktif();

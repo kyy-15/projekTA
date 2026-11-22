@@ -1,0 +1,19 @@
+﻿@import url("../fonts/all.min.css");
+:root {
+  --primary: #00c853;
+  --primary-dark: #00a443;
+  --bg: #f3f8f4;
+  --white: #ffffff;
+  --stroke: #e2e8f0;
+  --teks: #2d3748;
+  --input: #718096;
+  --abu: #edf2f7;
+  --red: #ff5252;
+  --shadow: 4px 4px 4px rgba(33, 150, 243, 0.1);
+}
+
+html, body { min-height: 100%; }
+body { font-family: 'Poppins', sans-serif; color: var(--teks); background: var(--bg); }
+button, input, select, textarea { font: inherit; }
+a { color: inherit; }
+

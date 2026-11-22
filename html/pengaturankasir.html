@@ -1,6 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="id">
 <head>
+    <link rel="stylesheet" href="../css/app-theme.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../fonts/all.min.css">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Laporan Keuangan</title>
@@ -8,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<link rel="stylesheet" href="/pengaturankasir.css">
+<link rel="stylesheet" href="../css/pengaturankasir.css">
 </head>
 
 <body>
@@ -16,64 +19,7 @@
 <div class="app-container">
 
     <!-- SIDEBAR -->
-<aside class="sidebar">
-
-    <div class="brand">
-        <span class="brand-mark"></span>
-        <span>Pisang Ijo<br>Omah</span>
-    </div>
-
-    <ul class="nav">
-
-        <li><a href="#" data-page="Beranda">
-            <i class="fa-solid fa-house"></i>Beranda
-        </a></li>
-
-        <li><a href="#" data-page="Menu">
-            <i class="fa-solid fa-utensils"></i>Menu
-        </a></li>
-
-        <li><a href="#" data-page="Transaksi">
-            <i class="fa-solid fa-receipt"></i>Transaksi
-        </a></li>
-
-        <li><a href="#" data-page="Manajemen Barang">
-            <i class="fa-solid fa-box"></i>Manajemen Barang
-        </a></li>
-
-        <li><a href="#" data-page="Stock Opname">
-            <i class="fa-solid fa-clipboard-list"></i>Stock Opname
-        </a></li>
-
-        <li><a href="#" data-page="Manajemen Pengguna">
-            <i class="fa-solid fa-users"></i>Manajemen Pengguna
-        </a></li>
-
-        <li><a href="#" data-page="Laporan Keuangan" class="active">
-            <i class="fa-solid fa-chart-line"></i>Laporan Keuangan
-        </a></li>
-
-        <li><a href="#" data-page="Riwayat Aktivitas">
-            <i class="fa-solid fa-clock-rotate-left"></i>Riwayat Aktivitas
-        </a></li>
-
-        <li><a href="#" data-page="Pengaturan">
-            <i class="fa-solid fa-gear"></i>Pengaturan
-        </a></li>
-
-        <li><a href="#" data-page="Notifikasi">
-            <i class="fa-solid fa-bell"></i>Notifikasi
-            <span class="count">2</span>
-        </a></li>
-
-    </ul>
-
-    <button class="logout" id="logoutBtn">
-        <i class="fa-solid fa-arrow-right-from-bracket"></i>
-        Log out
-    </button>
-
-</aside>
+<div id="sidebar-container"></div>
 
     <!-- MAIN -->
 <main class="main">
@@ -244,6 +190,10 @@
 
 </div>
 
-<script src="/pengaturankasir.js"></script>
+<script src="../js/pengaturankasir.js"></script>
+    <script src="../js/sidebar.js"></script>
 </body>
 </html>
+
+
+
