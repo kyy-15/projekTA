@@ -1,296 +1,74 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 
 <head>
-    <link rel="stylesheet" href="../css/app-theme.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transaksi - Pisang Ijo Omah</title>
-    <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline';">
-    <link rel="stylesheet" href="../css/transaksi.css">
-    <link rel="stylesheet" href="../css/sidebar.css">
-    <link rel="stylesheet" href="../fonts/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transaksi</title>
+  <link rel="stylesheet" href="../css/app-theme.css">
+  <link rel="stylesheet" href="../css/sidebar.css">
+  <link rel="stylesheet" href="../fonts/all.min.css">
+  <link rel="stylesheet" href="../css/transaksi.css">
 </head>
 
 <body>
-    <div class="dashboard-wrapper">
-        <div id="sidebar-container"></div>
-
-        <main class="main-content">
-            <header class="content-header">
-                <div class="header-left">
-                    <span class="sub-brand">Es Pisang Ijo Oma</span>
-                </div>
-                <div class="header-right">
-                    <div class="user-profile">
-                        <div class="user-info">
-                            <span class="user-name">Heri Sugeng</span>
-                            <span class="user-role">owner</span>
-                        </div>
-                        <div class="user-avatar">
-                            <i class="fa-solid fa-user-tie"></i>
-                        </div>
-                    </div>
-                </div>
-            </header>
-            <div class="container">
-
-                <!-- KARTU PEMBAYARAN -->
-                <section class="payment-cards">
-
-                    <button type="button" class="payment-card" data-metode="Tunai" aria-pressed="false">
-                        <div class="payment-icon cash-icon">
-                            <i class="fa-solid fa-money-bill-wave"></i>
-                        </div>
-                        <div class="payment-info">
-                            <span>Cash / Tunai</span>
-                            <h3 id="totalTunai">Rp 0</h3>
-                            <small id="jumlahTunai">0 transaksi</small>
-                        </div>
-                    </button>
-
-                    <button type="button" class="payment-card" data-metode="QRIS" aria-pressed="false">
-                        <div class="payment-icon qris-icon">
-                            <i class="fa-solid fa-qrcode"></i>
-                        </div>
-                        <div class="payment-info">
-                            <span>QRIS</span>
-                            <h3 id="totalQRIS">Rp 0</h3>
-                            <small id="jumlahQRIS">0 transaksi</small>
-                        </div>
-                    </button>
-
-                    <button type="button" class="payment-card" data-metode="Transfer" aria-pressed="false">
-                        <div class="payment-icon transfer-icon">
-                            <i class="fa-solid fa-building-columns"></i>
-                        </div>
-                        <div class="payment-info">
-                            <span>Transfer</span>
-                            <h3 id="totalTransfer">Rp 0</h3>
-                            <small id="jumlahTransfer">0 transaksi</small>
-                        </div>
-                    </button>
-
-                    <button type="button" class="payment-card" data-metode="Pendapatan" aria-pressed="false">
-                        <div class="payment-icon income-icon">
-                            <i class="fa-solid fa-wallet"></i>
-                        </div>
-                        <div class="payment-info">
-                            <span>Pendapatan Hari Ini</span>
-                            <h3 id="totalPendapatan">Rp 0</h3>
-                            <small id="jumlahPendapatan">0 transaksi</small>
-                        </div>
-                    </button>
-
-                </section>
-
-                <!-- TOOLBAR -->
-                <section class="toolbar">
-
-                    <!-- FILTER TANGGAL -->
-                    <div class="date-filter">
-
-                        <button type="button" class="calendar-button" id="calendarButton" title="Pilih tanggal">
-                            <i class="fa-solid fa-calendar-days"></i>
-                        </button>
-
-                        <button type="button" class="date-label-button" id="dateLabelButton">
-                            <span id="tanggalTerpilih">Semua Tanggal</span>
-                            <i class="fa-solid fa-chevron-down"></i>
-                        </button>
-
-                        <input type="date" id="filterTanggal" class="hidden-date-input" aria-label="Pilih tanggal">
-
-                        <button type="button" class="clear-date-button" id="clearDateButton" title="Hapus filter"
-                            hidden>
-                            <i class="fa-solid fa-xmark"></i>
-                        </button>
-
-                        <div class="day-dropdown" id="dayDropdown">
-                            <button type="button" data-day="Semua">Semua Tanggal</button>
-                            <button type="button" data-day="Senin">Senin</button>
-                            <button type="button" data-day="Selasa">Selasa</button>
-                            <button type="button" data-day="Rabu">Rabu</button>
-                            <button type="button" data-day="Kamis">Kamis</button>
-                            <button type="button" data-day="Jumat">Jumat</button>
-                            <button type="button" data-day="Sabtu">Sabtu</button>
-                            <button type="button" data-day="Minggu">Minggu</button>
-                        </div>
-
-                    </div>
-
-                    <!-- PENCARIAN -->
-                    <div class="search-box">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="search" id="searchInput" placeholder="Cari kode transaksi atau kasir...">
-                    </div>
-
-                    <!-- TAMBAH TRANSAKSI -->
-                    <button class="add-button" type="button" onclick="bukaModal()">
-                        <i class="fa-solid fa-plus"></i>
-                        Tambah Transaksi
-                    </button>
-
-                    <!-- DROPDOWN UNDUH -->
-                    <div class="export-dropdown">
-
-                        <button type="button" class="export-button" id="exportButton" aria-expanded="false"
-                            aria-controls="exportMenu">
-
-                            <i class="fa-solid fa-download"></i>
-                            <span>Unduh</span>
-                            <i class="fa-solid fa-chevron-down export-chevron"></i>
-
-                        </button>
-
-                        <div class="export-menu" id="exportMenu">
-
-                            <button type="button" class="export-item" id="unduhPDF">
-                                <i class="fa-solid fa-file-pdf pdf-icon"></i>
-                                <span>Unduh PDF</span>
-                            </button>
-
-                            <button type="button" class="export-item" id="unduhExcel">
-                                <i class="fa-solid fa-file-excel excel-icon"></i>
-                                <span>Unduh Excel</span>
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </section>
-
-                <!-- TABEL TRANSAKSI -->
-                <section class="table-card">
-
-                    <div class="table-responsive">
-
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Kode Transaksi</th>
-                                    <th>Hari</th>
-                                    <th>Tanggal</th>
-                                    <th>Kasir</th>
-                                    <th>Porsi</th>
-                                    <th>Total</th>
-                                    <th>Metode</th>
-                                    <th>Status</th>
-                                    <th>Aksi</th>
-                                </tr>
-                            </thead>
-
-                            <tbody id="tabelTransaksi"></tbody>
-                        </table>
-
-                        <div id="emptyMessage" class="empty-message" hidden>
-                            Tidak ada transaksi ditemukan.
-                        </div>
-
-                    </div>
-
-                    <footer class="table-footer">
-                        <p id="jumlahData">Menampilkan 0 dari 0 data</p>
-                        <div class="pagination" id="pagination"></div>
-                    </footer>
-
-                </section>
-
-        </main>
-    </div>
-
-    <!-- MODAL TAMBAH -->
-    <div class="modal" id="modalTambah">
-
-        <div class="modal-content">
-
-            <button class="close-button" type="button" onclick="tutupModal()">&times;</button>
-
-            <h2>Tambah Transaksi</h2>
-            <p class="modal-description">Masukkan data transaksi penjualan.</p>
-
-            <form id="formTransaksi">
-
-                <label for="namaKasir">Nama Kasir</label>
-                <input type="text" id="namaKasir" placeholder="Masukkan nama kasir" required>
-
-                <label for="tanggalTransaksi">Tanggal Transaksi</label>
-                <input type="date" id="tanggalTransaksi" required>
-
-                <label for="namaMenuTransaksi">Nama Menu</label>
-                <select id="namaMenuTransaksi" required>
-                    <option value="Original">Original</option>
-                    <option value="Keju">Keju</option>
-                    <option value="Nangka">Nangka</option>
-                    <option value="Kacang">Kacang</option>
-                    <option value="Es Krim">Es Krim</option>
-                </select>
-
-                <label for="jumlahPorsi">Jumlah Porsi</label>
-                <input type="number" id="jumlahPorsi" min="1" value="1" required>
-
-                <label for="totalTransaksi">Total Pembayaran (Rp)</label>
-                <input type="number" id="totalTransaksi" min="1" placeholder="15000" required>
-
-                <label for="metodeTransaksi">Metode Pembayaran</label>
-                <select id="metodeTransaksi">
-                    <option value="Tunai">Tunai</option>
-                    <option value="QRIS">QRIS</option>
-                    <option value="Transfer">Transfer</option>
-                </select>
-
-                <button type="submit" class="submit-button">Simpan Transaksi</button>
-
-            </form>
-
+  <div class="page">
+    <div id="sidebar-container"></div>
+    <main class="main-content">
+      <header class="page-header">
+        <div>
+          <h1><i class="fa-solid fa-receipt"></i> Transaksi</h1>
+          <p>Kelola dan pantau seluruh transaksi penjualan</p>
+        </div><span id="dateText"></span>
+      </header>
+      <section class="summary-grid">
+        <article class="summary-card"><i class="fa-solid fa-money-bill-wave"></i>
+          <div><small>Tunai</small><strong id="cashTotal">Rp 0</strong></div>
+        </article>
+        <article class="summary-card"><i class="fa-solid fa-qrcode"></i>
+          <div><small>QRIS</small><strong id="qrisTotal">Rp 0</strong></div>
+        </article>
+        <article class="summary-card"><i class="fa-solid fa-building-columns"></i>
+          <div><small>Transfer</small><strong id="transferTotal">Rp 0</strong></div>
+        </article>
+        <article class="summary-card highlight"><i class="fa-solid fa-chart-line"></i>
+          <div><small>Pendapatan Hari Ini</small><strong id="todayTotal">Rp 0</strong></div>
+        </article>
+      </section>
+      <section class="table-card">
+        <div class="toolbar"><input class="search" id="searchInput" type="search" placeholder="Cari kode transaksi atau nama kasir"
+            aria-label="Cari transaksi"><label>Mulai tanggal <input id="startDate" type="date"></label><label>Sampai
+            tanggal <input id="endDate" type="date"></label><button id="exportPdf" class="export-btn"><i
+              class="fa-solid fa-file-pdf"></i> Unduh PDF</button><button id="exportExcel" class="export-btn"><i
+              class="fa-solid fa-file-excel"></i> Unduh Excel</button></div>
+        <div class="section-title">
+          <h2>Daftar Transaksi</h2><span id="errorMessage" role="alert"></span>
         </div>
-    </div>
-
-    <!-- MODAL DETAIL -->
-    <div class="modal" id="modalDetail">
-
-        <div class="modal-content">
-
-            <button class="close-button" type="button" onclick="tutupDetail()">&times;</button>
-
-            <h2>Detail Transaksi</h2>
-
-            <div id="isiDetail" class="detail-list"></div>
-
-            <button class="submit-button" type="button" onclick="tutupDetail()">Tutup</button>
-
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Kode Transaksi</th>
+                <th>Tanggal</th>
+                <th>Kasir</th>
+                <th>Metode</th>
+                <th>Porsi</th>
+                <th>Total</th>
+                <th>Status</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="transactionBody"></tbody>
+          </table>
         </div>
-    </div>
-
-    <!-- MODAL KONFIRMASI KELUAR -->
-    <div class="modal-backdrop logout-backdrop" id="modalKeluar" aria-hidden="true">
-
-        <div class="logout-modal">
-
-            <div class="logout-icon">
-                <i class="fa-solid fa-right-from-bracket"></i>
-            </div>
-
-            <h2>Konfirmasi Keluar</h2>
-            <p>Apakah kamu yakin ingin keluar dari halaman Owner?</p>
-
-            <div class="logout-actions">
-                <button type="button" id="batalKeluar">Batal</button>
-                <button type="button" id="yaKeluar">Ya, Keluar</button>
-            </div>
-
+        <div class="table-footer"><span id="pageStatus"></span>
+          <div class="pagination" id="pagination"></div>
         </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/xlsx-js-style@1.2.0/dist/xlsx.bundle.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.4/jspdf.plugin.autotable.min.js"></script>
-    <script src="../js/transaksi.js"></script>
-    <script src="../js/sidebar.js"></script>
-
+      </section>
+    </main>
+  </div>
+  <script src="../js/sidebar.js"></script>
+  <script src="../js/transaksi.js"></script>
 </body>
 
 </html>
-

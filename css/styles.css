@@ -154,6 +154,14 @@ body {
 }
 
 /* Tombol Submit */
+.login-error {
+    min-height: 1.25rem;
+    margin: 0 0 0.75rem;
+    color: #c62828;
+    font-size: 0.875rem;
+    text-align: center;
+}
+
 .btn-submit {
     width: 100%;
     padding: 12px;

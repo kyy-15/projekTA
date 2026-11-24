@@ -11,25 +11,38 @@ togglePassword.addEventListener('click', function () {
     this.classList.toggle('fa-eye-slash');
 });
 
-// Menangani aksi Submit Form
+// Menangani submit login melalui API aman dari preload.js.
 const loginForm = document.querySelector('#loginForm');
-loginForm.addEventListener('submit', function (event) {
-    event.preventDefault(); 
+if (loginForm) {
+    loginForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
 
-    const username = document.querySelector('#username').value;
-    const password = passwordInput.value;
+        const username = document.querySelector('#username').value.trim();
+        const password = passwordInput.value;
+        const submitButton = loginForm.querySelector('button[type="submit"]');
+        let errorElement = document.querySelector('#loginError');
 
-    console.log('Mencoba Login dengan:', { username, password });
-    
-    // Siap dihubungkan ke ipcRenderer Electron Anda di sini
-});
-document.addEventListener('DOMContentLoaded', () => {
+        if (!errorElement) {
+            errorElement = document.createElement('p');
+            errorElement.id = 'loginError';
+            errorElement.setAttribute('role', 'alert');
+            loginForm.insertBefore(errorElement, submitButton);
+        }
+        errorElement.textContent = '';
+        submitButton.disabled = true;
 
-    const loginForm = document.getElementById('loginForm');
-    if (loginForm) {
-        loginForm.addEventListener('submit', (e) => {
-            e.preventDefault(); 
-            window.location.href = './html/beranda.html';
-        });
-    }    
-});
+        try {
+            const result = await window.electronAPI.login({ username, password });
+            if (!result?.success) {
+                errorElement.textContent = result?.message || 'Login gagal.';
+                return;
+            }
+            window.location.href = result.redirect;
+        } catch (error) {
+            console.error('Login gagal:', error);
+            errorElement.textContent = 'Terjadi kesalahan saat login. Silakan coba lagi.';
+        } finally {
+            submitButton.disabled = false;
+        }
+    });
+}

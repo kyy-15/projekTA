@@ -1,4 +1,5 @@
-const { ipcRenderer } = require('electron');
+// IPC diakses melalui API aman dari preload.js.
+const barangAPI = window.electronAPI;
 
 // ==========================================
 // DOM Elements
@@ -33,7 +34,7 @@ let masterDataBarang = [];
 // ==========================================
 async function loadBarangData() {
     try {
-        masterDataBarang = await ipcRenderer.invoke('get-barang');
+        masterDataBarang = await barangAPI.getBarang();
         renderTable(masterDataBarang);
     } catch (err) {
         console.error("Gagal mengambil data barang dari main.js:", err);
@@ -186,7 +187,7 @@ formBarang.addEventListener('submit', async (e) => {
     };
 
     try {
-        const response = await ipcRenderer.invoke('save-barang', payload);
+        const response = await barangAPI.saveBarang(payload);
         if (response.success) {
             masterDataBarang = response.data; 
             renderTable(masterDataBarang);   
