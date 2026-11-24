@@ -10,5 +10,19 @@
     "harga_beli": "10000",
     "minimal_stok": 5,
     "keterangan": "ada beberapa pisang yang dimakan monyet"
+  },
+  {
+    "id": "2",
+    "nama": "Es Batu",
+    "satuan": "gram",
+    "stok": 1000,
+    "stok_fisik": 1000,
+    "stok_sistem": 1000,
+    "harga_satuan": 10,
+    "harga_beli": "10.000",
+    "minimal_stok": 50,
+    "keterangan": "",
+    "kategori": "Bahan Baku",
+    "kode": "SKU-009"
   }
 ]

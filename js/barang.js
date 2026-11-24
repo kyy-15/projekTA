@@ -189,8 +189,17 @@ formBarang.addEventListener('submit', async (e) => {
     try {
         const response = await barangAPI.saveBarang(payload);
         if (response.success) {
-            masterDataBarang = response.data; 
-            renderTable(masterDataBarang);   
+            const wasEdit = Boolean(payload.id);
+            masterDataBarang = response.data;
+            renderTable(masterDataBarang);
+            const session = JSON.parse(sessionStorage.getItem('currentUser') || '{}');
+            if (window.electronAPI?.logActivity) {
+                await window.electronAPI.logActivity(
+                    session.user || 'Sistem',
+                    session.role || 'owner',
+                    wasEdit ? 'Mengubah data barang' : `Menambah barang ${payload.nama}`
+                );
+            }
         }
     } catch (err) {
         console.error("Gagal mengirim data simpan ke main process:", err);

@@ -12,6 +12,7 @@ contextBridge.exposeInMainWorld('electronAPI', {
   login: (credentials) => ipcRenderer.invoke('login', credentials),
   getDetailTransactions: () => ipcRenderer.invoke('get-detail-transactions'),
   getActivityHistory: () => ipcRenderer.invoke('get-activity-history'),
+  logActivity: (user, role, activity) => ipcRenderer.invoke('log-activity', { user, role, activity }),
   exportTransactions: (payload) => ipcRenderer.invoke('export-transactions', payload),
   getBarang: () => ipcRenderer.invoke('get-barang'),
   saveBarang: (payload) => ipcRenderer.invoke('save-barang', payload)

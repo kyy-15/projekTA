@@ -244,6 +244,14 @@ btnSimpanMenu.addEventListener('click', async () => {
 
   const response = await ipcRenderer.invoke('save-menu', payloadMenuBaru);
   if (response.success) {
+    const session = JSON.parse(sessionStorage.getItem('currentUser') || '{}');
+    if (window.electronAPI?.logActivity) {
+      await window.electronAPI.logActivity(
+        session.user || 'Sistem',
+        session.role || 'owner',
+        `Menambah menu ${namaMenu}`
+      );
+    }
     alert('Sukses menyimpan Menu Baru ke dalam menu.json!');
     // Bersihkan formulir kembali ke kondisi default
     window.location = "../html/menu.html";

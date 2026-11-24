@@ -37,6 +37,8 @@ if (loginForm) {
                 errorElement.textContent = result?.message || 'Login gagal.';
                 return;
             }
+            sessionStorage.setItem('currentUser', JSON.stringify({ user: username, role: result.role }));
+            await window.electronAPI.logActivity(username, result.role, 'Login ke dalam sistem');
             window.location.href = result.redirect;
         } catch (error) {
             console.error('Login gagal:', error);

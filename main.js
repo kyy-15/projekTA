@@ -30,6 +30,53 @@ function ensureFileExists(filePath, defaultContent = []) {
   }
 }
 
+const activityLogPath = path.join(__dirname, 'data', 'riwayat-aktivitas.json');
+let activityLogQueue = Promise.resolve();
+
+function queueActivityLog(task) {
+  const result = activityLogQueue.then(task, task);
+  activityLogQueue = result.catch(() => undefined);
+  return result;
+}
+
+async function appendActivityLog(user, role, activity) {
+  const safeUser = typeof user === 'string' && user.trim() ? user.trim() : 'Sistem';
+  const safeRole = role === 'kasir' ? 'kasir' : role === 'owner' ? 'owner' : 'sistem';
+  const safeActivity = typeof activity === 'string' && activity.trim() ? activity.trim() : 'Aktivitas sistem';
+  await fsPromises.mkdir(path.dirname(activityLogPath), { recursive: true });
+  let logs = [];
+  try {
+    const content = await fsPromises.readFile(activityLogPath, 'utf8');
+    if (content.trim()) {
+      const parsed = JSON.parse(content);
+      if (Array.isArray(parsed)) logs = parsed;
+    }
+  } catch (error) {
+    if (error.code !== 'ENOENT' && !(error instanceof SyntaxError)) throw error;
+  }
+  const now = new Date();
+  logs.push({
+    no: logs.reduce((max, item) => Math.max(max, Number(item.no || item.No) || 0), 0) + 1,
+    tanggal: now.toISOString().slice(0, 10),
+    waktu: now.toTimeString().slice(0, 5),
+    pengguna: safeUser,
+    jabatan: safeRole,
+    aktivitas: safeActivity
+  });
+  await fsPromises.writeFile(activityLogPath, JSON.stringify(logs, null, 2), 'utf8');
+  return logs[logs.length - 1];
+}
+
+ipcMain.handle('log-activity', async (event, payload) => {
+  try {
+    const log = await queueActivityLog(() => appendActivityLog(payload?.user, payload?.role, payload?.activity));
+    return { success: true, data: log };
+  } catch (error) {
+    console.error('Gagal menyimpan log aktivitas:', error);
+    return { success: false, message: 'Log aktivitas gagal disimpan.' };
+  }
+});
+
 function readKategoriData() {
   const filePath = path.join(__dirname, 'data', 'kategori.json');
   ensureFileExists(filePath);
@@ -111,7 +158,7 @@ ipcMain.handle('login', async (event, credentials) => {
   const password = typeof credentials?.password === 'string' ? credentials.password : '';
 
   if (username === 'oma' && password === 'admin123') {
-    return { success: true, role: 'owner', redirect: 'html/beranda.html' };
+    return { success: true, username, role: 'owner', redirect: 'html/beranda.html' };
   }
 
   try {
@@ -128,7 +175,7 @@ ipcMain.handle('login', async (event, credentials) => {
 
     const user = users.find((item) => item && item.username === username && item.password === password);
     if (user?.role === 'kasir') {
-      return { success: true, role: 'kasir', redirect: 'html/beranda-kasir.html' };
+      return { success: true, username, role: 'kasir', redirect: 'html/beranda-kasir.html' };
     }
     return { success: false, message: 'Username atau kata sandi salah.' };
   } catch (error) {

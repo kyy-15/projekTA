@@ -254,6 +254,14 @@ document.getElementById('btn-ubah-detail-menu').addEventListener('click', async 
 
   const res = await ipcRenderer.invoke('update-menu', dataMenuPenuh);
   if (res.success) {
+    const session = JSON.parse(sessionStorage.getItem('currentUser') || '{}');
+    if (window.electronAPI?.logActivity) {
+      await window.electronAPI.logActivity(
+        session.user || 'Sistem',
+        session.role || 'owner',
+        `Mengubah menu ${dataMenuPenuh.nama_menu}`
+      );
+    }
     alert('Perubahan data detail menu termasuk kategori berhasil disimpan ke menu.json!');
     window.location.href = 'menu.html';
 
@@ -270,6 +278,14 @@ document.getElementById('btn-hapus-menu').addEventListener('click', async () => 
   if (konfirmasi) {
     const res = await ipcRenderer.invoke('delete-menu', menuIdAktif);
     if (res.success) {
+      const session = JSON.parse(sessionStorage.getItem('currentUser') || '{}');
+      if (window.electronAPI?.logActivity) {
+        await window.electronAPI.logActivity(
+          session.user || 'Sistem',
+          session.role || 'owner',
+          `Menghapus menu ${dataMenuPenuh.nama_menu}`
+        );
+      }
       alert('Menu telah berhasil dihapus dari sistem.');
       window.location.href = 'menu.html'; // Mengarahkan kembali ke daftar menu utama setelah sukses menghapus
     }
