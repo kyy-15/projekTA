@@ -1,0 +1,17 @@
+[
+  {"tanggal":"2026-11-24","waktu":"08:10","pengguna":"Heri Sugeng","jabatan":"Owner","aktivitas":"Login ke sistem"},
+  {"tanggal":"2026-11-24","waktu":"08:25","pengguna":"Siti","jabatan":"Kasir","aktivitas":"Melakukan transaksi"},
+  {"tanggal":"2026-11-24","waktu":"09:00","pengguna":"Heri Sugeng","jabatan":"Owner","aktivitas":"Menambah barang keju"},
+  {"tanggal":"2026-11-23","waktu":"09:15","pengguna":"Budi","jabatan":"Kasir","aktivitas":"Login ke sistem"},
+  {"tanggal":"2026-11-23","waktu":"10:20","pengguna":"Siti","jabatan":"Kasir","aktivitas":"Mengubah data transaksi"},
+  {"tanggal":"2026-11-23","waktu":"11:05","pengguna":"Heri Sugeng","jabatan":"Owner","aktivitas":"Mengubah pengaturan toko"},
+  {"tanggal":"2026-11-22","waktu":"08:45","pengguna":"Rina","jabatan":"Kasir","aktivitas":"Melakukan transaksi"},
+  {"tanggal":"2026-11-22","waktu":"12:30","pengguna":"Budi","jabatan":"Kasir","aktivitas":"Menambah menu baru"},
+  {"tanggal":"2026-11-21","waktu":"09:10","pengguna":"Heri Sugeng","jabatan":"Owner","aktivitas":"Melihat laporan keuangan"},
+  {"tanggal":"2026-11-21","waktu":"13:40","pengguna":"Rina","jabatan":"Kasir","aktivitas":"Melakukan transaksi"},
+  {"tanggal":"2026-11-20","waktu":"08:05","pengguna":"Siti","jabatan":"Kasir","aktivitas":"Login ke sistem"},
+  {"tanggal":"2026-11-20","waktu":"15:25","pengguna":"Heri Sugeng","jabatan":"Owner","aktivitas":"Menghapus data barang"},
+  {"tanggal":"2026-11-19","waktu":"10:00","pengguna":"Budi","jabatan":"Kasir","aktivitas":"Mengubah stok barang"},
+  {"tanggal":"2026-11-19","waktu":"14:15","pengguna":"Rina","jabatan":"Kasir","aktivitas":"Melakukan transaksi"},
+  {"tanggal":"2026-11-18","waktu":"16:30","pengguna":"Heri Sugeng","jabatan":"Owner","aktivitas":"Mengekspor laporan transaksi"}
+]

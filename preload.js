@@ -11,6 +11,7 @@ const { contextBridge, ipcRenderer } = require('electron')
 contextBridge.exposeInMainWorld('electronAPI', {
   login: (credentials) => ipcRenderer.invoke('login', credentials),
   getDetailTransactions: () => ipcRenderer.invoke('get-detail-transactions'),
+  getActivityHistory: () => ipcRenderer.invoke('get-activity-history'),
   exportTransactions: (payload) => ipcRenderer.invoke('export-transactions', payload),
   getBarang: () => ipcRenderer.invoke('get-barang'),
   saveBarang: (payload) => ipcRenderer.invoke('save-barang', payload)

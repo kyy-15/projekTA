@@ -37,6 +37,21 @@ function readKategoriData() {
   return data ? JSON.parse(data) : [];
 }
 
+// IPC untuk mengambil riwayat aktivitas dengan validasi JSON.
+ipcMain.handle('get-activity-history', async () => {
+  try {
+    const filePath = path.join(__dirname, 'data', 'riwayat-aktivitas.json');
+    const content = await fsPromises.readFile(filePath, 'utf8');
+    if (!content.trim()) return { success: true, data: [] };
+    const data = JSON.parse(content);
+    if (!Array.isArray(data)) return { success: false, message: 'Format riwayat aktivitas tidak valid.' };
+    return { success: true, data };
+  } catch (error) {
+    console.error('Gagal membaca riwayat aktivitas:', error);
+    return { success: false, message: error.code === 'ENOENT' ? 'File riwayat aktivitas tidak ditemukan.' : 'Data riwayat aktivitas rusak atau gagal dibaca.' };
+  }
+});
+
 // IPC untuk mengambil data transaksi dari proses utama.
 ipcMain.handle('get-detail-transactions', async () => {
   try {
