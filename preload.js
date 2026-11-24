@@ -15,7 +15,11 @@ contextBridge.exposeInMainWorld('electronAPI', {
   logActivity: (user, role, activity) => ipcRenderer.invoke('log-activity', { user, role, activity }),
   exportTransactions: (payload) => ipcRenderer.invoke('export-transactions', payload),
   getBarang: () => ipcRenderer.invoke('get-barang'),
-  saveBarang: (payload) => ipcRenderer.invoke('save-barang', payload)
+  saveBarang: (payload) => ipcRenderer.invoke('save-barang', payload),
+  getAllMenu: () => ipcRenderer.invoke('get-all-menu'),
+  getCategories: () => ipcRenderer.invoke('get-categories'),
+  addCategory: (name) => ipcRenderer.invoke('add-category', name),
+  saveMenu: (payload) => ipcRenderer.invoke('save-menu', payload)
 })
 
 window.addEventListener('DOMContentLoaded', () => {

@@ -1,4 +1,4 @@
-const { ipcRenderer } = require('electron');
+const menuAPI = window.electronAPI;
 
 // --- DEKLARASI ELEMEN DOM ---
 const addBtn = document.getElementById('addBtn');
@@ -101,7 +101,7 @@ function renderCategories(semuakategori) {
 // --- INISIALISASI DATA MASTER KATEGORI ---
 async function initKategori() {
     try {
-        const semuakategori = await ipcRenderer.invoke('get-categories');
+        const semuakategori = await menuAPI.getCategories();
         renderCategories(semuakategori);
     } catch (error) {
         console.error("Gagal memuat daftar kategori:", error);
@@ -114,7 +114,7 @@ async function initKategori() {
 // --- INISIALISASI DAN PENGATURAN STRUKTUR ELEMENT DAFTAR MENU ---
 async function initDaftarMenu() {
     try {
-        const semuamenu = await ipcRenderer.invoke('get-all-menu');
+        const semuamenu = await menuAPI.getAllMenu();
 
         if (!semuamenu || semuamenu.length === 0) {
             listMenu.innerHTML = `<p>Tidak ada data menu. Silakan tambah menu baru terlebih dahulu.</p>`;
@@ -179,7 +179,7 @@ if (addBtn) {
 
         try {
             // 1. Kirim data ke Main Process
-            const updatedCategories = await ipcRenderer.invoke('add-category', name);
+            const updatedCategories = await menuAPI.addCategory(name);
 
             // 2. Render ulang UI tombol filter & dropdown select secara langsung tanpa refresh aplikasi
             renderCategories(updatedCategories);

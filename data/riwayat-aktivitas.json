@@ -119,5 +119,61 @@
     "pengguna": "oma",
     "jabatan": "owner",
     "aktivitas": "Menambah barang Es Batu"
+  },
+  {
+    "no": 3,
+    "tanggal": "2026-11-24",
+    "waktu": "20:31",
+    "pengguna": "oma",
+    "jabatan": "owner",
+    "aktivitas": "Login ke dalam sistem"
+  },
+  {
+    "no": 4,
+    "tanggal": "2026-11-24",
+    "waktu": "20:38",
+    "pengguna": "oma",
+    "jabatan": "owner",
+    "aktivitas": "Login ke dalam sistem"
+  },
+  {
+    "no": 5,
+    "tanggal": "2026-11-24",
+    "waktu": "20:50",
+    "pengguna": "kasir01",
+    "jabatan": "kasir",
+    "aktivitas": "Login ke dalam sistem"
+  },
+  {
+    "no": 6,
+    "tanggal": "2026-11-24",
+    "waktu": "20:57",
+    "pengguna": "kasir01",
+    "jabatan": "kasir",
+    "aktivitas": "Login ke dalam sistem"
+  },
+  {
+    "no": 7,
+    "tanggal": "2026-11-24",
+    "waktu": "21:03",
+    "pengguna": "kasir01",
+    "jabatan": "kasir",
+    "aktivitas": "Login ke dalam sistem"
+  },
+  {
+    "no": 8,
+    "tanggal": "2026-11-24",
+    "waktu": "21:11",
+    "pengguna": "kasir01",
+    "jabatan": "kasir",
+    "aktivitas": "Login ke dalam sistem"
+  },
+  {
+    "no": 9,
+    "tanggal": "2026-11-24",
+    "waktu": "21:13",
+    "pengguna": "kasir01",
+    "jabatan": "kasir",
+    "aktivitas": "Login ke dalam sistem"
   }
 ]

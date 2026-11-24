@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:;">
+  <title>Beranda Kasir - Es Pisang Ijo Oma</title>
+  <link rel="stylesheet" href="../css/app-theme.css">
+  <link rel="stylesheet" href="../css/sidebar.css">
+  <link rel="stylesheet" href="../fonts/all.min.css">
+  <link rel="stylesheet" href="../css/beranda-kasir.css">
+</head>
+
+<body class="kasir-body">
+  <div class="dashboard-wrapper">
+    <div id="sidebar-container"></div>
+    <main class="main-content">
+      <header class="content-header"><span class="sub-brand">Es Pisang Ijo Oma</span>
+        <div class="user-profile">
+          <div class="user-info"><span id="headerUser" class="user-name">Kasir</span><span
+              class="user-role">Kasir</span><span id="liveDate" class="header-date"></span></div>
+          <div class="user-avatar"><i class="fa-solid fa-user"></i></div>
+        </div>
+      </header>
+      <div class="kasir-container">
+        <section class="welcome-section">
+          <div>
+            <h1 id="welcomeTitle">Halo, Kasir</h1>
+            <p>Semangat! selamat bekerja hari ini</p>
+          </div>
+        </section>
+        <section class="stats-grid">
+          <article class="stat-card"><span>Total Omset Hari Ini</span><strong id="todayRevenue">Rp
+              0</strong><small>Transaksi hari ini</small></article>
+          <article class="stat-card"><span>Transaksi Hari Ini</span><strong id="todayCount">0</strong><small>Transaksi
+              selesai</small></article>
+          <article class="stat-card payment-card">
+            <div><span>Metode Pembayaran</span><small id="paymentLegend">Belum ada transaksi</small></div>
+            <div id="paymentChart" class="donut-chart"><b id="paymentTotal">0</b></div>
+          </article>
+        </section>
+        <section class="panel transaction-panel">
+          <div class="panel-header">
+            <h2>Transaksi Terbaru Hari Ini</h2><a href="transaksi.html">Lihat selengkapnya</a>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>Kode Transaksi</th>
+                  <th>Tanggal</th>
+                  <th>Kasir</th>
+                  <th>Porsi</th>
+                  <th>Total Harga</th>
+                  <th>Metode</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="transactionBody">
+                <tr>
+                  <td colspan="8">Memuat data...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section class="quick-grid"><a class="quick-card" href="transaksi-baru.html"><i
+              class="fa-solid fa-cart-plus"></i>
+            <div><strong>Tambah Transaksi</strong><span>Buat transaksi baru</span></div><i
+              class="fa-solid fa-chevron-right arrow"></i>
+          </a><a class="quick-card" href="barang.html"><i class="fa-solid fa-boxes-stacked"></i>
+            <div><strong>Cek Stok</strong><span>Lihat ketersediaan barang</span></div><i
+              class="fa-solid fa-chevron-right arrow"></i>
+          </a></section>
+      </div>
+    </main>
+  </div>
+  <script src="../js/sidebar.js"></script>
+  <script src="../js/beranda-kasir.js"></script>
+</body>
+
+</html>

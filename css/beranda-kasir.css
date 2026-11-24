@@ -1,0 +1,239 @@
+.kasir-body {
+    margin: 0;
+    background: #f7faf8;
+    color: #2d3748;
+    font-family: Poppins, sans-serif
+}
+
+.main-content {
+    margin-left: 260px;
+    min-height: 100vh
+}
+
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 14px 28px;
+    border-bottom: 1px solid #e3ece6
+}
+
+.sub-brand {
+    color: #20b858;
+    font-weight: 700
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px
+}
+
+.user-info {
+    text-align: right;
+    display: flex;
+    flex-direction: column
+}
+
+.user-name {
+    font-weight: 700
+}
+
+.user-role,
+.header-date {
+    font-size: 12px;
+    color: #718096
+}
+
+.user-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: #dff7e8;
+    color: #20b858
+}
+
+.kasir-container {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px
+}
+
+.welcome-section h1 {
+    margin: 0;
+    font-size: 26px
+}
+
+.welcome-section p {
+    margin: 5px 0;
+    color: #718096
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px
+}
+
+.stat-card,
+.panel,
+.quick-card {
+    background: #fff;
+    border: 1px solid #e1ebe4;
+    border-radius: 14px;
+    box-shadow: 0 4px 14px #1b8f3c0d
+}
+
+.stat-card {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 9px
+}
+
+.stat-card span {
+    color: #718096;
+    font-size: 14px
+}
+
+.stat-card strong {
+    font-size: 24px;
+    color: #1e9d50
+}
+
+.stat-card small {
+    color: #91a29a
+}
+
+.payment-card {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center
+}
+
+.donut-chart {
+    width: 78px;
+    height: 78px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: conic-gradient(#2ecc71 0deg 360deg, #e6eee9 0);
+    position: relative
+}
+
+.donut-chart:after {
+    content: "";
+    position: absolute;
+    width: 52px;
+    height: 52px;
+    background: #fff;
+    border-radius: 50%
+}
+
+.donut-chart b {
+    z-index: 1
+}
+
+.panel {
+    padding: 22px
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px
+}
+
+.panel-header h2 {
+    font-size: 18px;
+    margin: 0
+}
+
+.panel-header a {
+    color: #20b858;
+    font-size: 13px;
+    text-decoration: none
+}
+
+.table-wrap {
+    overflow: auto
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px
+}
+
+th {
+    background: #e4f7ea;
+    color: #18783c;
+    text-align: left
+}
+
+th,
+td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #edf2ee;
+    white-space: nowrap
+}
+
+.status {
+    color: #159447;
+    font-weight: 600
+}
+
+.quick-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px
+}
+
+.quick-card {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    text-decoration: none;
+    color: #2d3748
+}
+
+.quick-card>i:first-child {
+    font-size: 25px;
+    color: #20b858
+}
+
+.quick-card div {
+    display: flex;
+    flex-direction: column;
+    flex: 1
+}
+
+.quick-card span {
+    font-size: 13px;
+    color: #718096;
+    margin-top: 3px
+}
+
+.quick-card .arrow {
+    color: #a0aec0
+}
+
+@media(max-width:900px) {
+    .main-content {
+        margin-left: 0
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr
+    }
+
+    .quick-grid {
+        grid-template-columns: 1fr
+    }
+}
