@@ -309,7 +309,7 @@ ipcMain.handle('add-category', (event, newCategoryName) => {
 });
 
 ipcMain.handle('save-transaksi', async (event, transaksiBaru) => {
-  const filePath = path.join(__dirname, 'data', 'transaksi.json');
+  const filePath = path.join(__dirname, 'data', 'detail-transaksi.json');
   
   // Pastikan folder data dan file transaksi.json tersedia
   ensureFileExists(filePath);

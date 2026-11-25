@@ -1,12 +1,188 @@
 [
-  {"id":"TRX-20261118-001","tanggal":"2026-11-18","kasir":"Siti","metode":"Tunai","status":"Selesai","items":[{"nama":"Es Pisang Ijo","harga":15000,"jumlah":3},{"nama":"Pisang Nugget","harga":12000,"jumlah":2}],"total":69000},
-  {"id":"TRX-20261118-002","tanggal":"2026-11-18","kasir":"Budi","metode":"QRIS","status":"Selesai","items":[{"nama":"Es Pisang Ijo","harga":15000,"jumlah":4}],"total":60000},
-  {"id":"TRX-20261118-003","tanggal":"2026-11-18","kasir":"Siti","metode":"Transfer","status":"Selesai","items":[{"nama":"Es Pisang Ijo Spesial","harga":20000,"jumlah":5}],"total":100000},
-  {"id":"TRX-20261118-004","tanggal":"2026-11-18","kasir":"Rina","metode":"Tunai","status":"Selesai","items":[{"nama":"Pisang Nugget","harga":12000,"jumlah":3}],"total":36000},
-  {"id":"TRX-20261117-005","tanggal":"2026-11-17","kasir":"Budi","metode":"QRIS","status":"Selesai","items":[{"nama":"Es Pisang Ijo","harga":15000,"jumlah":6}],"total":90000},
-  {"id":"TRX-20261117-006","tanggal":"2026-11-17","kasir":"Rina","metode":"Tunai","status":"Selesai","items":[{"nama":"Es Pisang Ijo","harga":15000,"jumlah":2},{"nama":"Pisang Nugget","harga":12000,"jumlah":1}],"total":42000},
-  {"id":"TRX-20261117-007","tanggal":"2026-11-17","kasir":"Siti","metode":"Transfer","status":"Selesai","items":[{"nama":"Es Pisang Ijo Spesial","harga":20000,"jumlah":4}],"total":80000},
-  {"id":"TRX-20261116-008","tanggal":"2026-11-16","kasir":"Budi","metode":"Tunai","status":"Selesai","items":[{"nama":"Pisang Nugget","harga":12000,"jumlah":5}],"total":60000},
-  {"id":"TRX-20261116-009","tanggal":"2026-11-16","kasir":"Rina","metode":"QRIS","status":"Selesai","items":[{"nama":"Es Pisang Ijo","harga":15000,"jumlah":7}],"total":105000},
-  {"id":"TRX-20261116-010","tanggal":"2026-11-16","kasir":"Siti","metode":"Transfer","status":"Selesai","items":[{"nama":"Es Pisang Ijo","harga":15000,"jumlah":3}],"total":45000}
+  {
+    "id": "TRX-20261118-001",
+    "tanggal": "2026-11-18",
+    "kasir": "Siti",
+    "metode": "Tunai",
+    "status": "Selesai",
+    "items": [
+      {
+        "nama": "Es Pisang Ijo",
+        "harga": 15000,
+        "jumlah": 3
+      },
+      {
+        "nama": "Pisang Nugget",
+        "harga": 12000,
+        "jumlah": 2
+      }
+    ],
+    "total": 69000
+  },
+  {
+    "id": "TRX-20261118-002",
+    "tanggal": "2026-11-18",
+    "kasir": "Budi",
+    "metode": "QRIS",
+    "status": "Selesai",
+    "items": [
+      {
+        "nama": "Es Pisang Ijo",
+        "harga": 15000,
+        "jumlah": 4
+      }
+    ],
+    "total": 60000
+  },
+  {
+    "id": "TRX-20261118-003",
+    "tanggal": "2026-11-18",
+    "kasir": "Siti",
+    "metode": "Transfer",
+    "status": "Selesai",
+    "items": [
+      {
+        "nama": "Es Pisang Ijo Spesial",
+        "harga": 20000,
+        "jumlah": 5
+      }
+    ],
+    "total": 100000
+  },
+  {
+    "id": "TRX-20261118-004",
+    "tanggal": "2026-11-18",
+    "kasir": "Rina",
+    "metode": "Tunai",
+    "status": "Selesai",
+    "items": [
+      {
+        "nama": "Pisang Nugget",
+        "harga": 12000,
+        "jumlah": 3
+      }
+    ],
+    "total": 36000
+  },
+  {
+    "id": "TRX-20261117-005",
+    "tanggal": "2026-11-17",
+    "kasir": "Budi",
+    "metode": "QRIS",
+    "status": "Selesai",
+    "items": [
+      {
+        "nama": "Es Pisang Ijo",
+        "harga": 15000,
+        "jumlah": 6
+      }
+    ],
+    "total": 90000
+  },
+  {
+    "id": "TRX-20261117-006",
+    "tanggal": "2026-11-17",
+    "kasir": "Rina",
+    "metode": "Tunai",
+    "status": "Selesai",
+    "items": [
+      {
+        "nama": "Es Pisang Ijo",
+        "harga": 15000,
+        "jumlah": 2
+      },
+      {
+        "nama": "Pisang Nugget",
+        "harga": 12000,
+        "jumlah": 1
+      }
+    ],
+    "total": 42000
+  },
+  {
+    "id": "TRX-20261117-007",
+    "tanggal": "2026-11-17",
+    "kasir": "Siti",
+    "metode": "Transfer",
+    "status": "Selesai",
+    "items": [
+      {
+        "nama": "Es Pisang Ijo Spesial",
+        "harga": 20000,
+        "jumlah": 4
+      }
+    ],
+    "total": 80000
+  },
+  {
+    "id": "TRX-20261116-008",
+    "tanggal": "2026-11-16",
+    "kasir": "Budi",
+    "metode": "Tunai",
+    "status": "Selesai",
+    "items": [
+      {
+        "nama": "Pisang Nugget",
+        "harga": 12000,
+        "jumlah": 5
+      }
+    ],
+    "total": 60000
+  },
+  {
+    "id": "TRX-20261116-009",
+    "tanggal": "2026-11-16",
+    "kasir": "Rina",
+    "metode": "QRIS",
+    "status": "Selesai",
+    "items": [
+      {
+        "nama": "Es Pisang Ijo",
+        "harga": 15000,
+        "jumlah": 7
+      }
+    ],
+    "total": 105000
+  },
+  {
+    "id": "TRX-20261116-010",
+    "tanggal": "2026-11-16",
+    "kasir": "Siti",
+    "metode": "Transfer",
+    "status": "Selesai",
+    "items": [
+      {
+        "nama": "Es Pisang Ijo",
+        "harga": 15000,
+        "jumlah": 3
+      }
+    ],
+    "total": 45000
+  },
+  {
+    "id": "TRX-001",
+    "tanggal": "2026-11-25",
+    "waktu": "09:46",
+    "kasir": "kasir01",
+    "pelanggan": "asd",
+    "tambahan": "",
+    "metode": "Tunai",
+    "status": "Selesai",
+    "items": [
+      {
+        "nama": "es pisang ijo",
+        "harga": 10000,
+        "jumlah": 1
+      },
+      {
+        "nama": "es pisang ijo es krim",
+        "harga": 193443,
+        "jumlah": 1
+      }
+    ],
+    "subtotal": 203443,
+    "pajak": 20344,
+    "biayaAdmin": 1000,
+    "total": 224787
+  }
 ]

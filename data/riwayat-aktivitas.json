@@ -175,5 +175,69 @@
     "pengguna": "kasir01",
     "jabatan": "kasir",
     "aktivitas": "Login ke dalam sistem"
+  },
+  {
+    "no": 10,
+    "tanggal": "2026-11-25",
+    "waktu": "08:53",
+    "pengguna": "oma",
+    "jabatan": "owner",
+    "aktivitas": "Login ke dalam sistem"
+  },
+  {
+    "no": 11,
+    "tanggal": "2026-11-25",
+    "waktu": "08:53",
+    "pengguna": "kasir01",
+    "jabatan": "kasir",
+    "aktivitas": "Login ke dalam sistem"
+  },
+  {
+    "no": 12,
+    "tanggal": "2026-11-25",
+    "waktu": "08:54",
+    "pengguna": "oma",
+    "jabatan": "owner",
+    "aktivitas": "Login ke dalam sistem"
+  },
+  {
+    "no": 13,
+    "tanggal": "2026-11-25",
+    "waktu": "08:54",
+    "pengguna": "kasir01",
+    "jabatan": "kasir",
+    "aktivitas": "Login ke dalam sistem"
+  },
+  {
+    "no": 14,
+    "tanggal": "2026-11-25",
+    "waktu": "08:54",
+    "pengguna": "kasir01",
+    "jabatan": "kasir",
+    "aktivitas": "Login ke dalam sistem"
+  },
+  {
+    "no": 15,
+    "tanggal": "2026-11-25",
+    "waktu": "09:43",
+    "pengguna": "kasir01",
+    "jabatan": "kasir",
+    "aktivitas": "Login ke dalam sistem"
+  },
+  {
+    "no": 16,
+    "tanggal": "2026-11-25",
+    "waktu": "09:44",
+    "pengguna": "kasir01",
+    "jabatan": "kasir",
+    "aktivitas": "Login ke dalam sistem"
+  },
+  {
+    "no": 17,
+    "tanggal": "2026-11-25",
+    "waktu": "10:50",
+    "pengguna": "kasir01",
+    "jabatan": "kasir",
+    "aktivitas": "Login ke dalam sistem"
   }
 ]

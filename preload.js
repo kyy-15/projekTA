@@ -19,7 +19,8 @@ contextBridge.exposeInMainWorld('electronAPI', {
   getAllMenu: () => ipcRenderer.invoke('get-all-menu'),
   getCategories: () => ipcRenderer.invoke('get-categories'),
   addCategory: (name) => ipcRenderer.invoke('add-category', name),
-  saveMenu: (payload) => ipcRenderer.invoke('save-menu', payload)
+  saveMenu: (payload) => ipcRenderer.invoke('save-menu', payload),
+  saveTransaksi: (payload) => ipcRenderer.invoke('save-transaksi', payload)
 })
 
 window.addEventListener('DOMContentLoaded', () => {
