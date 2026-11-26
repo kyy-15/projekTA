@@ -146,7 +146,7 @@ $('chips').addEventListener('click', e => {
 });
 
 // Menu sidebar
-document.querySelector('.nav').addEventListener('click', e => {
+document.querySelector('.nav')?.addEventListener('click', e => {
   const a = e.target.closest('.nav a');
   if (!a) return;
   e.preventDefault();
@@ -155,7 +155,7 @@ document.querySelector('.nav').addEventListener('click', e => {
 });
 
 // Logout
-$('logoutBtn').addEventListener('click', () => {
+$('logoutBtn')?.addEventListener('click', () => {
   if (confirm('Yakin ingin keluar?')) alert('Anda telah log out.');
 });
 

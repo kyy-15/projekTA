@@ -20,6 +20,8 @@ contextBridge.exposeInMainWorld('electronAPI', {
   getCategories: () => ipcRenderer.invoke('get-categories'),
   addCategory: (name) => ipcRenderer.invoke('add-category', name),
   saveMenu: (payload) => ipcRenderer.invoke('save-menu', payload),
+  updateMenu: (payload) => ipcRenderer.invoke('update-menu', payload),
+  deleteMenu: (menuId) => ipcRenderer.invoke('delete-menu', menuId),
   saveTransaksi: (payload) => ipcRenderer.invoke('save-transaksi', payload)
 })
 

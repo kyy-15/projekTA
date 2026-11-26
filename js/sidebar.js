@@ -36,6 +36,8 @@ function pasangHandlerLogout() {
     logout.addEventListener('click', event => {
         event.preventDefault();
         sessionStorage.removeItem('currentUser');
+        sessionStorage.removeItem('namaUser');
+        sessionStorage.removeItem('roleUser');
         localStorage.removeItem('currentUser');
         window.location.href = '../index.html';
     });

@@ -38,6 +38,8 @@ if (loginForm) {
                 return;
             }
             sessionStorage.setItem('currentUser', JSON.stringify({ user: username, role: result.role }));
+            sessionStorage.setItem('namaUser', username);
+            sessionStorage.setItem('roleUser', result.role);
             await window.electronAPI.logActivity(username, result.role, 'Login ke dalam sistem');
             window.location.href = result.redirect;
         } catch (error) {

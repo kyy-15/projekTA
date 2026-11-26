@@ -1,4 +1,4 @@
-const { ipcRenderer } = require('electron');
+const detailMenuAPI = window.electronAPI;
 
 // State Internal Halaman Detail
 let menuIdAktif = ""; // ID Menu yang dimuat
@@ -32,14 +32,14 @@ menuIdAktif = urlParams.get('id');
 // 1. Inisialisasi Utama Halaman Detail
 async function initDetail() {
   // 1a. Ambil data master barang baku
-  masterBarang = await ipcRenderer.invoke('get-barang');
+  masterBarang = await window.electronAPI.getBarang();
   buildModalDropdown();
 
   // 1b. Ambil dan render seluruh master kategori ke dropdown select secara dinamis
   await initKategoriDropdown();
 
   // 2. Ambil data menu spesifik
-  const semuaMenu = await ipcRenderer.invoke('get-all-menu');
+  const semuaMenu = await window.electronAPI.getAllMenu();
 
   // Catatan Jalur Cadangan: Jika tidak ada id di parameter URL, ambil data item pertama dari menu.json untuk simulasi
   dataMenuPenuh = semuaMenu.find(m => m.id === menuIdAktif) || semuaMenu[0];
@@ -74,7 +74,7 @@ async function initKategoriDropdown() {
   if (!detailInputKategori) return;
 
   try {
-    const semuakategori = await ipcRenderer.invoke('get-categories');
+    const semuakategori = await window.electronAPI.getCategories();
 
     // Kosongkan HTML bawaan mockup statis
     detailInputKategori.innerHTML = '<option value="">-- Pilih Kategori --</option>';
@@ -252,7 +252,7 @@ document.getElementById('btn-ubah-detail-menu').addEventListener('click', async 
   if (!dataMenuPenuh.nama_menu) return alert('Nama menu utama wajib diisi!');
   if (!dataMenuPenuh.kategori_id) return alert('Silakan pilih kategori menu terlebih dahulu!');
 
-  const res = await ipcRenderer.invoke('update-menu', dataMenuPenuh);
+  const res = await window.electronAPI.updateMenu(dataMenuPenuh);
   if (res.success) {
     const session = JSON.parse(sessionStorage.getItem('currentUser') || '{}');
     if (window.electronAPI?.logActivity) {
@@ -276,7 +276,7 @@ document.getElementById('btn-ubah-detail-menu').addEventListener('click', async 
 document.getElementById('btn-hapus-menu').addEventListener('click', async () => {
   const konfirmasi = confirm(`Apakah Anda yakin ingin menghapus menu "${dataMenuPenuh.nama_menu}" secara permanen?`);
   if (konfirmasi) {
-    const res = await ipcRenderer.invoke('delete-menu', menuIdAktif);
+    const res = await window.electronAPI.deleteMenu(menuIdAktif);
     if (res.success) {
       const session = JSON.parse(sessionStorage.getItem('currentUser') || '{}');
       if (window.electronAPI?.logActivity) {

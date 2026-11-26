@@ -1,15 +1,17 @@
 [
   {
     "id": "1",
-    "kode": "SKU-1000",
     "nama": "Es Pisang Ijo",
     "satuan": "Kg",
-    "kategori": "Bahan Baku",
+    "stok": 12,
     "stok_fisik": 12,
     "stok_sistem": 12,
+    "harga_satuan": 10000,
     "harga_beli": "10000",
     "minimal_stok": 5,
-    "keterangan": "ada beberapa pisang yang dimakan monyet"
+    "keterangan": "ada beberapa pisang yang dimakan monyet",
+    "kategori": "Bahan Baku",
+    "kode": "SKU-1000"
   },
   {
     "id": "2",

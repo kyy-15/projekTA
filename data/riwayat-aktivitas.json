@@ -239,5 +239,117 @@
     "pengguna": "kasir01",
     "jabatan": "kasir",
     "aktivitas": "Login ke dalam sistem"
+  },
+  {
+    "no": 18,
+    "tanggal": "2026-11-26",
+    "waktu": "08:40",
+    "pengguna": "oma",
+    "jabatan": "owner",
+    "aktivitas": "Login ke dalam sistem"
+  },
+  {
+    "no": 19,
+    "tanggal": "2026-11-26",
+    "waktu": "08:49",
+    "pengguna": "oma",
+    "jabatan": "owner",
+    "aktivitas": "Login ke dalam sistem"
+  },
+  {
+    "no": 20,
+    "tanggal": "2026-11-26",
+    "waktu": "08:51",
+    "pengguna": "oma",
+    "jabatan": "owner",
+    "aktivitas": "Login ke dalam sistem"
+  },
+  {
+    "no": 21,
+    "tanggal": "2026-11-26",
+    "waktu": "09:55",
+    "pengguna": "oma",
+    "jabatan": "owner",
+    "aktivitas": "Login ke dalam sistem"
+  },
+  {
+    "no": 22,
+    "tanggal": "2026-11-26",
+    "waktu": "11:23",
+    "pengguna": "oma",
+    "jabatan": "owner",
+    "aktivitas": "Login ke dalam sistem"
+  },
+  {
+    "no": 23,
+    "tanggal": "2026-11-26",
+    "waktu": "12:44",
+    "pengguna": "oma",
+    "jabatan": "owner",
+    "aktivitas": "Login ke dalam sistem"
+  },
+  {
+    "no": 24,
+    "tanggal": "2026-11-26",
+    "waktu": "13:05",
+    "pengguna": "oma",
+    "jabatan": "owner",
+    "aktivitas": "Login ke dalam sistem"
+  },
+  {
+    "no": 25,
+    "tanggal": "2026-11-26",
+    "waktu": "13:07",
+    "pengguna": "oma",
+    "jabatan": "owner",
+    "aktivitas": "Login ke dalam sistem"
+  },
+  {
+    "no": 26,
+    "tanggal": "2026-11-26",
+    "waktu": "13:09",
+    "pengguna": "oma",
+    "jabatan": "owner",
+    "aktivitas": "Mengubah data barang"
+  },
+  {
+    "no": 27,
+    "tanggal": "2026-11-26",
+    "waktu": "13:10",
+    "pengguna": "oma",
+    "jabatan": "owner",
+    "aktivitas": "Login ke dalam sistem"
+  },
+  {
+    "no": 28,
+    "tanggal": "2026-11-26",
+    "waktu": "13:22",
+    "pengguna": "oma",
+    "jabatan": "owner",
+    "aktivitas": "Login ke dalam sistem"
+  },
+  {
+    "no": 29,
+    "tanggal": "2026-11-26",
+    "waktu": "13:37",
+    "pengguna": "kasir01",
+    "jabatan": "kasir",
+    "aktivitas": "Login ke dalam sistem"
+  },
+  {
+    "no": 30,
+    "tanggal": "2026-11-26",
+    "waktu": "13:38",
+    "pengguna": "oma",
+    "jabatan": "owner",
+    "aktivitas": "Login ke dalam sistem"
+  },
+  {
+    "no": 31,
+    "tanggal": "2026-11-26",
+    "waktu": "13:41",
+    "pengguna": "oma",
+    "jabatan": "owner",
+    "aktivitas": "Login ke dalam sistem"
   }
 ]

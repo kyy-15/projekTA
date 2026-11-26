@@ -1,4 +1,4 @@
-const { ipcRenderer } = require('electron');
+const tambahMenuAPI = window.electronAPI;
 
 // Penampung data master
 let masterBarang = [];
@@ -42,7 +42,7 @@ const imgPreview = document.getElementById('img-preview');
 
 // 1. Inisialisasi Ambil Data Barang
 async function init() {
-  masterBarang = await ipcRenderer.invoke('get-barang');
+  masterBarang = await window.electronAPI.getBarang();
   buildDropdownBahan();
   hitungHppDanMargin();
 }
@@ -242,7 +242,7 @@ btnSimpanMenu.addEventListener('click', async () => {
     harga_jual: hargaJual
   };
 
-  const response = await ipcRenderer.invoke('save-menu', payloadMenuBaru);
+  const response = await window.electronAPI.saveMenu(payloadMenuBaru);
   if (response.success) {
     const session = JSON.parse(sessionStorage.getItem('currentUser') || '{}');
     if (window.electronAPI?.logActivity) {
@@ -265,7 +265,7 @@ const inputKategoriSelect = document.getElementById('input-kategori');
 
 // 1. Inisialisasi Ambil Data Barang dan Kategori
 async function init() {
-  masterBarang = await ipcRenderer.invoke('get-barang');
+  masterBarang = await window.electronAPI.getBarang();
   buildDropdownBahan();
   
   // Panggil fungsi inisialisasi kategori baru di sini
@@ -279,7 +279,7 @@ async function initKategori() {
   if (!inputKategoriSelect) return;
   
   try {
-    const semuakategori = await ipcRenderer.invoke('get-categories');
+    const semuakategori = await window.electronAPI.getCategories();
     
     // Set opsi default awal
     inputKategoriSelect.innerHTML = '<option value="">-- Pilih Kategori --</option>';

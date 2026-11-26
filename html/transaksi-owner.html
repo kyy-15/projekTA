@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transaksi</title>
+  <link rel="stylesheet" href="../css/app-theme.css">
+  <link rel="stylesheet" href="../css/sidebar.css">
+  <link rel="stylesheet" href="../fonts/all.min.css">
+  <link rel="stylesheet" href="../css/transaksi.css">
+</head>
+
+<body>
+  <div class="page">
+    <div id="sidebar-container"></div>
+    <main class="main-content">
+      <header class="page-header">
+        <div>
+          <h1><i class="fa-solid fa-receipt"></i> Transaksi</h1>
+          <p>Kelola dan pantau seluruh transaksi penjualan</p>
+        </div><span id="dateText"></span>
+      </header>
+      <section class="summary-grid">
+        <article class="summary-card"><i class="fa-solid fa-money-bill-wave"></i>
+          <div><small>Tunai</small><strong id="cashTotal">Rp 0</strong></div>
+        </article>
+        <article class="summary-card"><i class="fa-solid fa-qrcode"></i>
+          <div><small>QRIS</small><strong id="qrisTotal">Rp 0</strong></div>
+        </article>
+        <article class="summary-card"><i class="fa-solid fa-building-columns"></i>
+          <div><small>Transfer</small><strong id="transferTotal">Rp 0</strong></div>
+        </article>
+        <article class="summary-card highlight"><i class="fa-solid fa-chart-line"></i>
+          <div><small>Pendapatan Hari Ini</small><strong id="todayTotal">Rp 0</strong></div>
+        </article>
+      </section>
+      <section class="table-card">
+        <div class="toolbar"><input class="search" id="searchInput" type="search" placeholder="Cari kode transaksi atau nama kasir"
+            aria-label="Cari transaksi"><label>Mulai tanggal <input id="startDate" type="date"></label><label>Sampai
+            tanggal <input id="endDate" type="date"></label><button id="exportPdf" class="export-btn"><i
+              class="fa-solid fa-file-pdf"></i> Unduh PDF</button><button id="exportExcel" class="export-btn"><i
+              class="fa-solid fa-file-excel"></i> Unduh Excel</button></div>
+        <div class="section-title">
+          <h2>Daftar Transaksi</h2><span id="errorMessage" role="alert"></span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Kode Transaksi</th>
+                <th>Tanggal</th>
+                <th>Kasir</th>
+                <th>Metode</th>
+                <th>Porsi</th>
+                <th>Total</th>
+                <th>Status</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="transactionBody"></tbody>
+          </table>
+        </div>
+        <div class="table-footer"><span id="pageStatus"></span>
+          <div class="pagination" id="pagination"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="../js/header.js"></script>
+  <script src="../js/sidebar.js"></script>
+  <script src="../js/transaksi-owner.js"></script>
+</body>
+
+</html>
